@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stuzhin — веб-разработка под ключ</title>
+<meta name="description" content="Фулстек-разработка сайтов и веб-сервисов: Next.js, Node.js, Python, PostgreSQL. Корпоративные сайты, админ-панели, аналитика, интеграции LLM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0d10; --bg2:#111318; --panel:#15171d; --line:#23262f;
+  --ink:#f2f3f5; --muted:#9aa0ab; --dim:#6b7280;
+  --accent:#5eead4; --accent2:#38bdf8; --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.mono{font-family:'JetBrains Mono',monospace}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-0.02em}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(12,13,16,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
+.logo{font-family:'Space Grotesk';font-weight:700;font-size:18px;display:flex;align-items:center;gap:9px}
+.logo .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.navlinks{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-size:12px;font-family:'JetBrains Mono',monospace}
+.lang button{background:none;border:0;color:var(--muted);padding:6px 12px;cursor:pointer;font:inherit}
+.lang button.on{background:var(--accent);color:#08262040}
+.lang button.on{background:var(--accent);color:#0c0d10;font-weight:500}
+
+/* hero */
+header{padding:104px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+header::before{content:"";position:absolute;top:-220px;right:-160px;width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,rgba(56,189,248,.16),transparent 62%);filter:blur(30px);pointer-events:none}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+h1{font-size:clamp(38px,6.2vw,68px);font-weight:700;max-width:16ch}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin-top:24px;max-width:60ch;color:var(--muted);font-size:17px}
+.btns{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:99px;font-size:15px;font-weight:500;transition:.2s}
+.btn.p{background:var(--accent);color:#0c0d10}
+.btn.p:hover{transform:translateY(-2px);box-shadow:0 10px 30px -12px var(--accent)}
+.btn.s{border:1px solid var(--line);color:var(--ink)}
+.btn.s:hover{border-color:var(--accent);color:var(--accent)}
+.stats{margin-top:60px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;max-width:820px}
+.stat b{display:block;font-family:'Space Grotesk';font-size:30px;font-weight:600}
+.stat span{font-size:13px;color:var(--dim)}
+
+/* sections */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:42px}
+.sechead span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim)}
+.sechead h2{font-size:clamp(26px,3.4vw,36px);font-weight:600}
+
+/* cases */
+.case{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:30px;margin-bottom:22px;transition:.25s}
+.case:hover{border-color:#2f3440;transform:translateY(-3px)}
+.case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.case h3{font-size:24px;font-weight:600}
+.case .kind{font-size:14px;color:var(--muted);margin-bottom:22px}
+.case .link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);white-space:nowrap}
+.case .link:hover{text-decoration:underline}
+.case .link.off{color:var(--dim)}
+.rows{display:grid;gap:14px}
+.row{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:start}
+.row dt{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding-top:3px}
+.row dd{color:#d6d9de;font-size:15px}
+.tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:99px;color:var(--muted);background:var(--bg2)}
+.note{margin-top:26px;font-size:14px;color:var(--dim)}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.scard{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:24px}
+.scard h4{font-family:'Space Grotesk';font-size:15px;font-weight:600;margin-bottom:12px}
+.scard p{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);line-height:1.9}
+
+/* cta */
+.cta{text-align:center;padding:92px 0}
+.cta h2{font-size:clamp(28px,4vw,42px);font-weight:600}
+.cta p{margin:18px auto 32px;max-width:52ch;color:var(--muted)}
+.contacts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{padding:30px 0 46px;font-size:13px;color:var(--dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:720px){
+  .navlinks{display:none}
+  header{padding:72px 0 64px}
+  .row{grid-template-columns:1fr;gap:4px}
+  .case{padding:24px 20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="logo"><span class="dot"></span>Stuzhin</div>
+  <div class="navlinks">
+    <a href="#work" data-i="nav1">Работы</a>
+    <a href="#stack" data-i="nav2">Стек</a>
+    <a href="#contact" data-i="nav3">Контакты</a>
+  </div>
+  <div class="lang">
+    <button id="bru" class="on" onclick="setLang('ru')">RU</button>
+    <button id="ben" onclick="setLang('en')">EN</button>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="eyebrow" data-i="eyebrow">Фулстек веб-разработка</div>
+  <h1><span data-i="h1a">Сайты и веб-сервисы,</span> <em data-i="h1b">которые решают задачу бизнеса</em></h1>
+  <p class="lead" data-i="lead">Делаю корпоративные сайты, интернет-магазины и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.</p>
+  <div class="btns">
+    <a class="btn p" href="#work" data-i="btn1">Смотреть работы</a>
+    <a class="btn s" href="https://t.me/stuzhin" target="_blank" rel="noopener" data-i="btn2">Написать в Telegram</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>14+</b><span data-i="s1">проектов в продакшене</span></div>
+    <div class="stat"><b>2 <span data-i="s2y">года</span></b><span data-i="s2">коммерческой разработки</span></div>
+    <div class="stat"><b>Next.js</b><span data-i="s3">основной стек</span></div>
+  </div>
+</div></header>
+
+<section id="work"><div class="wrap">
+  <div class="sechead"><span class="mono">01</span><h2 data-i="sec1">Избранные работы</h2></div>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Boost Marine</h3>
+      <a class="link" href="https://boostmarine.ru/" target="_blank" rel="noopener">boostmarine.ru ↗</a>
+    </div>
+    <div class="kind" data-i="c1k">Обслуживание и продажа катеров — сайт + внутренняя система</div>
+    <dl class="rows">
+      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c1t">Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.</dd></div>
+      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c1s">Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.</dd></div>
+      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c1r">Все обращения в одном месте с историей, контент выходит регулярно без отдельного копирайтера.</dd></div>
+    </dl>
+    <div class="tags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">LLM API</span><span class="tag">Tailwind</span></div>
+  </article>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Dianafarm Group</h3>
+      <a class="link" href="http://dianafarm.group" target="_blank" rel="noopener">dianafarm.group ↗</a>
+    </div>
+    <div class="kind" data-i="c2k">Международный консалтинг — многоязычный корпоративный сайт</div>
+    <dl class="rows">
+      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c2t">Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.</dd></div>
+      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c2s">Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.</dd></div>
+      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c2r">Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.</dd></div>
+    </dl>
+    <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">i18n</span><span class="tag">SEO</span></div>
+  </article>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Agile Parts</h3>
+      <span class="link off" data-i="c3l">под NDA — покажу на созвоне</span>
+    </div>
+    <div class="kind" data-i="c3k">Магазин автозапчастей — интерактивный каталог с 3D</div>
+    <dl class="rows">
+      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c3t">Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.</dd></div>
+      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c3s">Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.</dd></div>
+      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c3r">Магазин выглядит как бренд, а не как выгрузка прайса; карточка товара отвечает на вопросы до обращения в поддержку.</dd></div>
+    </dl>
+    <div class="tags"><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div>
+  </article>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Royal Horse</h3>
+      <a class="link" href="https://royal-horse-lake.vercel.app/" target="_blank" rel="noopener">royal-horse.vercel.app ↗</a>
+    </div>
+    <div class="kind" data-i="c4k">Конный клуб — трёхъязычный сайт с записью</div>
+    <dl class="rows">
+      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c4t">Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.</dd></div>
+      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c4s">Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.</dd></div>
+      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c4r">Запись идёт с сайта, а не только через переписку в соцсетях.</dd></div>
+    </dl>
+    <div class="tags"><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">i18n</span><span class="tag">Vercel</span></div>
+  </article>
+
+  <p class="note" data-i="note">Ещё около десяти проектов под NDA или в разработке — покажу на созвоне.</p>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <div class="sechead"><span class="mono">02</span><h2 data-i="sec2">Стек</h2></div>
+  <div class="stack">
+    <div class="scard"><h4 data-i="k1">Фронтенд</h4><p>React · Next.js<br>TypeScript · Tailwind<br>Three.js</p></div>
+    <div class="scard"><h4 data-i="k2">Бэкенд и данные</h4><p>Node.js · Python<br>PostgreSQL<br>REST · интеграции CRM</p></div>
+    <div class="scard"><h4 data-i="k3">Админки и аналитика</h4><p data-i="k3p">Панели управления<br>Воронки заявок<br>Дашборды и отчёты</p></div>
+    <div class="scard"><h4 data-i="k4">Автоматизация и LLM</h4><p data-i="k4p">Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания</p></div>
+  </div>
+</div></section>
+
+<section id="contact" class="cta"><div class="wrap">
+  <h2 data-i="ctah">Нужен сайт или веб-сервис?</h2>
+  <p data-i="ctap">Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.</p>
+  <div class="contacts">
+    <a class="btn p" href="https://t.me/stuzhin" target="_blank" rel="noopener">Telegram — @stuzhin</a>
+    <a class="btn s" href="mailto:stuzzhin@mail.ru">stuzzhin@mail.ru</a>
+  </div>
+</div></section>
+
+<div class="wrap"><footer>
+  <span data-i="foot">© 2026 Stuzhin — веб-разработка под ключ</span>
+  <span class="mono">Kyiv · remote</span>
+</footer></div>
+
+<script>
+const T = {
+ nav1:["Работы","Work"], nav2:["Стек","Stack"], nav3:["Контакты","Contact"],
+ eyebrow:["Фулстек веб-разработка","Full-stack web development"],
+ h1a:["Сайты и веб-сервисы,","Websites and web services"],
+ h1b:["которые решают задачу бизнеса","that solve a business problem"],
+ lead:["Делаю корпоративные сайты, интернет-магазины и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.",
+       "I build corporate sites, online stores and internal tools end to end — from design and frontend to admin panel, analytics and AI integrations. Available for direct clients and agency subcontracting."],
+ btn1:["Смотреть работы","See the work"], btn2:["Написать в Telegram","Message on Telegram"],
+ s1:["проектов в продакшене","projects in production"],
+ s2:["коммерческой разработки","of commercial development"], s2y:["года","years"],
+ s3:["основной стек","main stack"],
+ sec1:["Избранные работы","Selected work"], sec2:["Стек","Stack"],
+ lt:["Задача","Problem"], ls:["Решение","Solution"], lr:["Результат","Outcome"],
+
+ c1k:["Обслуживание и продажа катеров — сайт + внутренняя система","Boat service and sales — website plus internal system"],
+ c1t:["Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.",
+      "Leads got lost in messengers, nobody had time for the blog, and the owner couldn't see where clients came from."],
+ c1s:["Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.",
+      "Service catalogue site, admin panel with a lead pipeline and source analytics, and LLM-drafted blog articles with manual review."],
+ c1r:["Все обращения в одном месте с историей, контент выходит регулярно без отдельного копирайтера.",
+      "Every enquiry lives in one place with its history, and the blog ships regularly without a copywriter."],
+
+ c2k:["Международный консалтинг — многоязычный корпоративный сайт","International consulting — multilingual corporate site"],
+ c2t:["Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.",
+      "The firm works across the EU, UAE and Bulgaria with services split by industry — the old site made it hard to find the right one."],
+ c2s:["Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.",
+      "An industry-to-service structure with dedicated landing pages, full localisation, and one enquiry form routed by service line."],
+ c2r:["Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.",
+      "One site now covers several markets, and each service page doubles as an ad landing page."],
+
+ c3l:["под NDA — покажу на созвоне","under NDA — shown on a call"],
+ c3k:["Магазин автозапчастей — интерактивный каталог с 3D","Auto parts store — interactive catalogue with 3D"],
+ c3t:["Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.",
+      "Stand out from hundreds of identical catalogues and help buyers understand exactly what they're getting."],
+ c3s:["Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.",
+      "Custom identity, 3D product renders on the item page, an interactive home page, and catalogue filters by vehicle fit."],
+ c3r:["Магазин выглядит как бренд, а не как выгрузка прайса; карточка товара отвечает на вопросы до обращения в поддержку.",
+      "The store reads as a brand rather than a price-list dump, and product pages answer questions before support has to."],
+
+ c4k:["Конный клуб — трёхъязычный сайт с записью","Equestrian club — trilingual site with booking"],
+ c4t:["Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.",
+      "Present the club's services and take bookings from an audience speaking three languages."],
+ c4s:["Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.",
+      "A compact site with services and pricing, a booking form that notifies the administrator, and three language versions."],
+ c4r:["Запись идёт с сайта, а не только через переписку в соцсетях.","Bookings now come through the site, not only through social media DMs."],
+
+ note:["Ещё около десяти проектов под NDA или в разработке — покажу на созвоне.",
+       "Around ten more projects are under NDA or in progress — happy to walk through them on a call."],
+ k1:["Фронтенд","Frontend"], k2:["Бэкенд и данные","Backend and data"],
+ k3:["Админки и аналитика","Admin and analytics"],
+ k3p:["Панели управления<br>Воронки заявок<br>Дашборды и отчёты","Control panels<br>Lead pipelines<br>Dashboards and reports"],
+ k4:["Автоматизация и LLM","Automation and LLM"],
+ k4p:["Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания","Telegram bots (aiogram)<br>Content generation<br>Notifications and reminders"],
+ ctah:["Нужен сайт или веб-сервис?","Need a website or web service?"],
+ ctap:["Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.",
+       "Tell me about the task — I'll propose a solution, timeline and price. Available end to end or as a subcontractor."],
+ foot:["© 2026 Stuzhin — веб-разработка под ключ","© 2026 Stuzhin — end-to-end web development"]
+};
+function setLang(l){
+  const i = l === 'en' ? 1 : 0;
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const v = T[el.dataset.i];
+    if(v) el.innerHTML = v[i];
+  });
+  document.documentElement.lang = l;
+  document.title = i ? 'Stuzhin — end-to-end web development' : 'Stuzhin — веб-разработка под ключ';
+  bru.classList.toggle('on', !i);
+  ben.classList.toggle('on', !!i);
+}
+</script>
+</body>
+</html>
