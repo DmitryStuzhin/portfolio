@@ -4,208 +4,487 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stuzhin — веб-разработка под ключ</title>
-<meta name="description" content="Фулстек-разработка сайтов и веб-сервисов: Next.js, Node.js, Python, PostgreSQL. Корпоративные сайты, админ-панели, аналитика, интеграции LLM.">
+<meta name="description" content="Фулстек-разработка сайтов и веб-сервисов: Next.js, Node.js, Python, PostgreSQL. Корпоративные сайты, каталоги и конфигураторы, админ-панели, аналитика, интеграции LLM.">
+<meta name="theme-color" content="#08090c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stuzhin — веб-разработка под ключ">
+<meta property="og:description" content="Сайты и веб-сервисы под ключ: фронтенд, бэкенд, админки, аналитика, интеграции с нейросетями.">
+<meta property="og:image" content="assets/gardarika.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308090c'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23ffb84d'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* ===== tokens — DESIGN.md §2 / §3 ===== */
 :root{
-  --bg:#0c0d10; --bg2:#111318; --panel:#15171d; --line:#23262f;
-  --ink:#f2f3f5; --muted:#9aa0ab; --dim:#6b7280;
-  --accent:#5eead4; --accent2:#38bdf8; --r:16px;
+  --void:#08090c;      --void-rgb:8,9,12;
+  --base:#0b0d11;      --base-rgb:11,13,17;
+  --panel:#111318;     --panel-rgb:17,19,24;
+  --panel-2:#171a20;   --panel-2-rgb:23,26,32;
+  --line:rgba(255,255,255,.09);
+  --line-2:rgba(255,255,255,.16);
+  --ink:#f5f6f8;       --ink-rgb:245,246,248;
+  --body:#d3d7de;      --body-rgb:211,215,222;
+  --muted:#a2a8b4;     --muted-rgb:162,168,180;
+  --dim:#6c727e;       --dim-rgb:108,114,126;
+  --amber:#ffb84d;     --amber-rgb:255,184,77;
+  --amber-hi:#ffc970;
+  --amber-dim:rgba(255,184,77,.14);
+  --ok:#7ddba3;        --ok-rgb:125,219,163;
+  --wip:#8fb4ff;       --wip-rgb:143,180,255;
+
+  --display:'Unbounded','Onest',ui-sans-serif,system-ui,sans-serif;
+  --sans:'Onest',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --r:20px;
+  --ease-in:cubic-bezier(.22,.61,.36,1);
+  --ease:cubic-bezier(.4,0,.2,1);
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--void);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-.mono{font-family:'JetBrains Mono',monospace}
-h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-0.02em}
+img{display:block;max-width:100%}
+::selection{background:var(--amber);color:var(--void)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
 
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(12,13,16,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
-.logo{font-family:'Space Grotesk';font-weight:700;font-size:18px;display:flex;align-items:center;gap:9px}
-.logo .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
-.navlinks{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono)}
+h1,h2,h3{font-family:var(--display);font-weight:700}
+h1{font-size:clamp(40px,7.4vw,92px);line-height:.96;letter-spacing:-.04em}
+h2{font-size:clamp(28px,4.2vw,46px);line-height:1.04;letter-spacing:-.03em}
+h3{font-size:clamp(22px,2.6vw,30px);font-weight:600;line-height:1.1;letter-spacing:-.02em}
+.label{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+
+/* ===== nav ===== */
+nav{position:sticky;top:0;z-index:60;background:rgba(var(--void-rgb),.72);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .3s var(--ease),background .3s var(--ease)}
+nav.scrolled{border-bottom-color:var(--line);background:rgba(var(--void-rgb),.92)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:18px}
+.logo{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 14px var(--amber)}
+.navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.navlinks a{position:relative;display:inline-flex;align-items:center;min-height:44px;transition:color .2s var(--ease)}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--amber);transition:width .25s var(--ease)}
 .navlinks a:hover{color:var(--ink)}
-.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;font-size:12px;font-family:'JetBrains Mono',monospace}
-.lang button{background:none;border:0;color:var(--muted);padding:6px 12px;cursor:pointer;font:inherit}
-.lang button.on{background:var(--accent);color:#08262040}
-.lang button.on{background:var(--accent);color:#0c0d10;font-weight:500}
+.navlinks a:hover::after{width:100%}
+.navright{display:flex;align-items:center;gap:14px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:12px}
+.lang button{background:none;border:0;color:var(--muted);padding:9px 13px;min-height:44px;cursor:pointer;font:inherit;transition:background .2s var(--ease),color .2s var(--ease)}
+.lang button:hover{color:var(--ink)}
+.lang button.on{background:var(--amber);color:var(--void);font-weight:500}
 
-/* hero */
-header{padding:104px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-header::before{content:"";position:absolute;top:-220px;right:-160px;width:560px;height:560px;border-radius:50%;
-  background:radial-gradient(circle,rgba(56,189,248,.16),transparent 62%);filter:blur(30px);pointer-events:none}
-.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
-h1{font-size:clamp(38px,6.2vw,68px);font-weight:700;max-width:16ch}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{margin-top:24px;max-width:60ch;color:var(--muted);font-size:17px}
-.btns{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:99px;font-size:15px;font-weight:500;transition:.2s}
-.btn.p{background:var(--accent);color:#0c0d10}
-.btn.p:hover{transform:translateY(-2px);box-shadow:0 10px 30px -12px var(--accent)}
-.btn.s{border:1px solid var(--line);color:var(--ink)}
-.btn.s:hover{border-color:var(--accent);color:var(--accent)}
-.stats{margin-top:60px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;max-width:820px}
-.stat b{display:block;font-family:'Space Grotesk';font-size:30px;font-weight:600}
-.stat span{font-size:13px;color:var(--dim)}
+/* ===== buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;min-height:44px;
+  border-radius:999px;font-size:15px;font-weight:600;border:1px solid transparent;cursor:pointer;font-family:var(--sans);
+  transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+.btn.p{background:var(--amber);border-color:var(--amber);color:var(--void)}
+.btn.p:hover{background:var(--amber-hi);border-color:var(--amber-hi);transform:translateY(-2px);box-shadow:0 14px 34px -14px rgba(var(--amber-rgb),.7)}
+.btn.p:active{transform:translateY(0) scale(.985);box-shadow:none}
+.btn.s{border-color:var(--line);color:var(--ink);background:transparent}
+.btn.s:hover{border-color:var(--amber);color:var(--amber);background:var(--amber-dim)}
+.btn.s:active{transform:scale(.985)}
+.btn[disabled]{opacity:.45;pointer-events:none}
 
-/* sections */
-section{padding:88px 0;border-bottom:1px solid var(--line)}
-.sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:42px}
-.sechead span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim)}
-.sechead h2{font-size:clamp(26px,3.4vw,36px);font-weight:600}
+/* ===== hero ===== */
+header{position:relative;overflow:hidden;padding:clamp(76px,10vw,128px) 0 clamp(64px,8vw,104px);border-bottom:1px solid var(--line)}
+.ambient{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(680px circle at var(--mx,72%) var(--my,18%), rgba(var(--amber-rgb),.11), transparent 62%),
+    radial-gradient(900px 520px at 88% -10%, rgba(var(--amber-rgb),.07), transparent 60%);
+  transition:background .18s linear}
+.grid-lines{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:100% 88px,88px 100%;
+  -webkit-mask-image:radial-gradient(680px 420px at 20% 20%,#000,transparent 78%);
+  mask-image:radial-gradient(680px 420px at 20% 20%,#000,transparent 78%)}
+header .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--amber);margin-bottom:26px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+h1{max-width:15ch}
+.line{display:block;overflow:hidden}
+.line > span{display:block;transform:translateY(105%);animation:riseIn .9s var(--ease-in) forwards}
+.line:nth-child(1) > span{animation-delay:.05s}
+.line:nth-child(2) > span{animation-delay:.14s}
+.line:nth-child(3) > span{animation-delay:.23s}
+@keyframes riseIn{to{transform:translateY(0)}}
+h1 em{font-style:normal;color:var(--amber)}
+.lead{margin-top:28px;max-width:56ch;color:var(--muted);font-size:clamp(16px,1.5vw,19px);opacity:0;animation:fadeUp .8s var(--ease-in) .42s forwards}
+.btns{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s var(--ease-in) .52s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.stats{margin-top:clamp(48px,6vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;max-width:860px;
+  opacity:0;animation:fadeUp .8s var(--ease-in) .62s forwards}
+.stat b{display:block;font-family:var(--display);font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.1;white-space:nowrap}
+.stat > span{display:block;margin-top:6px;font-size:13px;color:var(--dim)}
 
-/* cases */
-.case{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:30px;margin-bottom:22px;transition:.25s}
-.case:hover{border-color:#2f3440;transform:translateY(-3px)}
-.case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:8px}
-.case h3{font-size:24px;font-weight:600}
-.case .kind{font-size:14px;color:var(--muted);margin-bottom:22px}
-.case .link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);white-space:nowrap}
-.case .link:hover{text-decoration:underline}
-.case .link.off{color:var(--dim)}
+/* ===== marquee ===== */
+.marquee{border-bottom:1px solid var(--line);background:var(--base);padding:clamp(22px,3vw,34px) 0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:slide 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--display);font-weight:700;font-size:clamp(38px,7vw,84px);line-height:1;letter-spacing:-.03em;
+  color:transparent;-webkit-text-stroke:1px rgba(var(--ink-rgb),.24);padding-right:.45em;white-space:nowrap}
+.marquee-track span.hi{color:var(--amber);-webkit-text-stroke:0}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== sections ===== */
+section{padding:clamp(72px,9vw,128px) 0;border-bottom:1px solid var(--line)}
+.sechead{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;align-items:baseline;margin-bottom:clamp(38px,5vw,60px)}
+.sechead .num{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.1em}
+.sechead p{grid-column:2;max-width:52ch;color:var(--muted);font-size:16px;margin-top:16px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease-in),transform .65s var(--ease-in)}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== cases ===== */
+.cases{display:grid;gap:clamp(20px,2.6vw,30px)}
+.case{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  display:grid;grid-template-columns:1.05fr 1fr;gap:0;
+  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
+.case::before{content:"";position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;transition:opacity .35s var(--ease);
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(var(--amber-rgb),.10), transparent 62%)}
+.case:hover{border-color:var(--line-2);background:var(--panel-2);transform:translateY(-3px)}
+.case:hover::before{opacity:1}
+.case:focus-within{border-color:var(--amber)}
+.case.flip{grid-template-columns:1fr 1.05fr}
+.case.flip .media{order:2}
+
+.media{padding:22px;display:grid;gap:14px;align-content:center;background:var(--base);border-right:1px solid var(--line)}
+.case.flip .media{border-right:0;border-left:1px solid var(--line)}
+.media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid var(--line);
+  border-radius:14px;filter:saturate(.94);transition:transform .5s var(--ease),filter .5s var(--ease)}
+.case:hover .media img{transform:scale(1.02);filter:saturate(1.06)}
+.media .cap{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+.nda-plate{width:100%;aspect-ratio:16/10;border:1px solid var(--line);border-radius:14px;display:grid;place-content:center;gap:10px;
+  text-align:center;background:
+    repeating-linear-gradient(135deg,rgba(var(--ink-rgb),.022) 0 12px,transparent 12px 24px),var(--panel)}
+.nda-plate b{font-family:var(--display);font-size:clamp(22px,3vw,34px);letter-spacing:-.02em;color:var(--dim)}
+.nda-plate span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.body{padding:clamp(24px,2.6vw,34px);align-self:center}
+.case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;white-space:nowrap}
+.status i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor;flex:none}
+.status.live{color:var(--ok)}
+.status.wip{color:var(--wip)}
+.status.nda{color:var(--dim)}
+.kind{color:var(--muted);font-size:15px;margin-bottom:22px}
 .rows{display:grid;gap:14px}
-.row{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:start}
-.row dt{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding-top:3px}
-.row dd{color:#d6d9de;font-size:15px}
-.tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-family:'JetBrains Mono',monospace;font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:99px;color:var(--muted);background:var(--bg2)}
-.note{margin-top:26px;font-size:14px;color:var(--dim)}
+.row{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start}
+.row dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding-top:4px}
+.row dd{color:var(--body);font-size:15px}
+.tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--base)}
+.visit{display:inline-flex;align-items:center;min-height:44px;gap:6px;margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--amber)}
+.visit:hover{text-decoration:underline;text-underline-offset:4px}
+.visit .arrow{display:inline-block;transition:transform .2s var(--ease)}
+.visit:hover .arrow{transform:translate(3px,-3px)}
+.note{margin-top:28px;font-size:15px;color:var(--dim)}
 
-/* stack */
-.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.scard{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:24px}
-.scard h4{font-family:'Space Grotesk';font-size:15px;font-weight:600;margin-bottom:12px}
-.scard p{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);line-height:1.9}
+/* ===== process ===== */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.step:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:.1em}
+.step h4{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.02em;margin:14px 0 10px}
+.step p{font-size:14px;color:var(--muted)}
 
-/* cta */
-.cta{text-align:center;padding:92px 0}
-.cta h2{font-size:clamp(28px,4vw,42px);font-weight:600}
-.cta p{margin:18px auto 32px;max-width:52ch;color:var(--muted)}
+/* ===== stack ===== */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.scard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.scard:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.scard h4{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:-.02em;margin-bottom:14px}
+.scard p{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.95}
+
+/* ===== cta ===== */
+.cta{text-align:center;position:relative;overflow:hidden}
+.cta .wrap{position:relative;z-index:1}
+.cta p{margin:18px auto 34px;max-width:52ch;color:var(--muted)}
 .contacts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-footer{padding:30px 0 46px;font-size:13px;color:var(--dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.copied{position:relative}
+.copied::after{content:attr(data-copied);position:absolute;left:50%;top:-34px;transform:translate(-50%,6px);
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);
+  background:var(--base);border:1px solid var(--line);border-radius:999px;padding:5px 11px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.copied.show::after{opacity:1;transform:translate(-50%,0)}
+.copied.show{animation:spark .9s var(--ease)}
+@keyframes spark{0%{box-shadow:0 0 0 0 rgba(var(--amber-rgb),.5)}100%{box-shadow:0 0 0 18px rgba(var(--amber-rgb),0)}}
 
-@media (max-width:720px){
-  .navlinks{display:none}
-  header{padding:72px 0 64px}
-  .row{grid-template-columns:1fr;gap:4px}
-  .case{padding:24px 20px}
+footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ===== responsive — DESIGN.md §9 ===== */
+@media (max-width:900px){
+  .case,.case.flip{grid-template-columns:1fr}
+  .media{border-right:0;border-bottom:1px solid var(--line)}
+  .case.flip .media{order:0;border-left:0;border-bottom:1px solid var(--line)}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media (max-width:640px){
+  .navlinks{display:none}
+  .wrap{padding:0 20px}
+  .row{grid-template-columns:1fr;gap:4px}
+  .row dt{padding-top:0}
+  .marquee-track{animation-duration:20s}
+  .stats{gap:20px}
+}
+@media (hover:none){
+  .case::before,.ambient{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .line > span{transform:none!important}
+  .lead,.btns,.stats{opacity:1!important}
+}
 </style>
 </head>
 <body>
 
-<nav><div class="wrap">
-  <div class="logo"><span class="dot"></span>Stuzhin</div>
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Stuzhin — на главную"><span class="dot"></span>Stuzhin</a>
   <div class="navlinks">
     <a href="#work" data-i="nav1">Работы</a>
-    <a href="#stack" data-i="nav2">Стек</a>
-    <a href="#contact" data-i="nav3">Контакты</a>
+    <a href="#process" data-i="nav2">Процесс</a>
+    <a href="#stack" data-i="nav3">Стек</a>
+    <a href="#contact" data-i="nav4">Контакты</a>
   </div>
-  <div class="lang">
-    <button id="bru" class="on" onclick="setLang('ru')">RU</button>
-    <button id="ben" onclick="setLang('en')">EN</button>
+  <div class="navright">
+    <div class="lang" role="group" aria-label="Language">
+      <button id="bru" class="on" onclick="setLang('ru')">RU</button>
+      <button id="ben" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 </div></nav>
 
-<header><div class="wrap">
-  <div class="eyebrow" data-i="eyebrow">Фулстек веб-разработка</div>
-  <h1><span data-i="h1a">Сайты и веб-сервисы,</span> <em data-i="h1b">которые решают задачу бизнеса</em></h1>
-  <p class="lead" data-i="lead">Делаю корпоративные сайты, интернет-магазины и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.</p>
-  <div class="btns">
-    <a class="btn p" href="#work" data-i="btn1">Смотреть работы</a>
-    <a class="btn s" href="https://t.me/stuzhin" target="_blank" rel="noopener" data-i="btn2">Написать в Telegram</a>
+<header id="top">
+  <div class="ambient" id="ambient" aria-hidden="true"></div>
+  <div class="grid-lines" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow"><i></i><span data-i="eyebrow">Фулстек веб-разработка</span></div>
+    <h1>
+      <span class="line"><span data-i="h1a">Сайты и веб-сервисы,</span></span>
+      <span class="line"><span data-i="h1b">которые решают</span></span>
+      <span class="line"><em data-i="h1c">задачу бизнеса</em></span>
+    </h1>
+    <p class="lead" data-i="lead">Делаю корпоративные сайты, каталоги с конфигураторами и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.</p>
+    <div class="btns">
+      <a class="btn p magnet" href="#work" data-i="btn1">Смотреть работы</a>
+      <a class="btn s magnet" href="https://t.me/stuzhin" target="_blank" rel="noopener" data-i="btn2">Написать в Telegram</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>14+</b><span data-i="s1">проектов в продакшене</span></div>
+      <div class="stat"><b>2 <span data-i="s2y">года</span></b><span data-i="s2">коммерческой разработки</span></div>
+      <div class="stat"><b>Next.js</b><span data-i="s3">основной стек</span></div>
+    </div>
   </div>
-  <div class="stats">
-    <div class="stat"><b>14+</b><span data-i="s1">проектов в продакшене</span></div>
-    <div class="stat"><b>2 <span data-i="s2y">года</span></b><span data-i="s2">коммерческой разработки</span></div>
-    <div class="stat"><b>Next.js</b><span data-i="s3">основной стек</span></div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="mq">
+    <span data-i="mq1">Дизайн</span><span class="hi">·</span><span data-i="mq2">Фронтенд</span><span class="hi">·</span><span data-i="mq3">Бэкенд</span><span class="hi">·</span><span data-i="mq4">Админки</span><span class="hi">·</span><span data-i="mq5">Аналитика</span><span class="hi">·</span><span data-i="mq6">LLM</span><span class="hi">·</span>
+    <span data-i="mq1b">Дизайн</span><span class="hi">·</span><span data-i="mq2b">Фронтенд</span><span class="hi">·</span><span data-i="mq3b">Бэкенд</span><span class="hi">·</span><span data-i="mq4b">Админки</span><span class="hi">·</span><span data-i="mq5b">Аналитика</span><span class="hi">·</span><span data-i="mq6b">LLM</span><span class="hi">·</span>
   </div>
-</div></header>
+</div>
 
 <section id="work"><div class="wrap">
-  <div class="sechead"><span class="mono">01</span><h2 data-i="sec1">Избранные работы</h2></div>
+  <div class="sechead reveal">
+    <span class="num">01</span><h2 data-i="sec1">Избранные работы</h2>
+    <p data-i="sec1p">Каждый проект — от постановки задачи до выкатки в продакшен: дизайн, фронтенд, бэкенд, админка.</p>
+  </div>
 
-  <article class="case">
-    <div class="case-top">
-      <h3>Boost Marine</h3>
-      <a class="link" href="https://boostmarine.ru/" target="_blank" rel="noopener">boostmarine.ru ↗</a>
-    </div>
-    <div class="kind" data-i="c1k">Обслуживание и продажа катеров — сайт + внутренняя система</div>
-    <dl class="rows">
-      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c1t">Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.</dd></div>
-      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c1s">Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.</dd></div>
-      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c1r">Все обращения в одном месте с историей, контент выходит регулярно без отдельного копирайтера.</dd></div>
-    </dl>
-    <div class="tags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">LLM API</span><span class="tag">Tailwind</span></div>
-  </article>
+  <div class="cases">
 
-  <article class="case">
-    <div class="case-top">
-      <h3>Dianafarm Group</h3>
-      <a class="link" href="http://dianafarm.group" target="_blank" rel="noopener">dianafarm.group ↗</a>
-    </div>
-    <div class="kind" data-i="c2k">Международный консалтинг — многоязычный корпоративный сайт</div>
-    <dl class="rows">
-      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c2t">Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.</dd></div>
-      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c2s">Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.</dd></div>
-      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c2r">Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.</dd></div>
-    </dl>
-    <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">i18n</span><span class="tag">SEO</span></div>
-  </article>
+    <article class="case reveal spot">
+      <div class="media">
+        <img src="assets/gardarika.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Гардарика — первый экран сайта архитектурно-строительного бюро">
+        <img src="assets/gardarika-studio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Гардарика — конструктор дома: выбор проверенной 3D-модели">
+        <span class="cap" data-i="g-cap">Главная и вход в конструктор</span>
+      </div>
+      <div class="body">
+        <div class="case-top">
+          <h3>Гардарика</h3>
+          <span class="status wip"><i></i><span data-i="st-wip">в разработке</span></span>
+        </div>
+        <div class="kind" data-i="c5k">Архитектурно-строительное бюро — каталог проектов и конструктор дома</div>
+        <dl class="rows">
+          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c5t">Действующий сайт собран на e-commerce-шаблоне: корзина и «1 товар» под каждым проектом дома, меню на 25 пунктов, а обещанный на первом экране расчёт стоимости никуда не вёл.</dd></div>
+          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c5s">Каталог проектов со страницей на каждый дом и конструктор на одиннадцать шагов: 3D-модель на Three.js, планировки, собираемые из тех же модулей, что и объём, выгрузка предварительной сметы в PDF. Любой дом из каталога открывается в конструкторе как редактируемая основа.</dd></div>
+          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c5r">Путь «посмотрел проект → собрал свой → получил смету» проходится без звонка менеджеру. Сейчас проект в разработке — покажу вживую на созвоне.</dd></div>
+        </dl>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">WebGL</span><span class="tag">jsPDF</span><span class="tag">Static build</span></div>
+      </div>
+    </article>
 
-  <article class="case">
-    <div class="case-top">
-      <h3>Agile Parts</h3>
-      <span class="link off" data-i="c3l">под NDA — покажу на созвоне</span>
-    </div>
-    <div class="kind" data-i="c3k">Магазин автозапчастей — интерактивный каталог с 3D</div>
-    <dl class="rows">
-      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c3t">Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.</dd></div>
-      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c3s">Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.</dd></div>
-      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c3r">Магазин выглядит как бренд, а не как выгрузка прайса; карточка товара отвечает на вопросы до обращения в поддержку.</dd></div>
-    </dl>
-    <div class="tags"><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div>
-  </article>
+    <article class="case flip reveal spot">
+      <div class="media">
+        <img src="assets/amirdent.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="АмирДент — первый экран сайта стоматологической клиники">
+        <span class="cap" data-i="a-cap">Главная страница клиники</span>
+      </div>
+      <div class="body">
+        <div class="case-top">
+          <h3>АмирДент</h3>
+          <span class="status live"><i></i><span data-i="st-live">в продакшене</span></span>
+        </div>
+        <div class="kind" data-i="c6k">Стоматология в Москве — сайт с записью и админкой</div>
+        <dl class="rows">
+          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c6t">Клинике нужен был поток записей с сайта, отдельные страницы под каждую услугу для поиска и возможность менять врачей, цены и тексты без разработчика.</dd></div>
+          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c6s">Одностраничный сайт с ценами и галереей плюс build-шаг, который генерирует индексируемые страницы услуг и sitemap. Заявка сначала сохраняется в хранилище и только потом уходит ботом в Telegram, поэтому сбой мессенджера не уничтожает обращение. Админка правит врачей, услуги и тексты.</dd></div>
+          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c6r">Запись приходит администратору в мессенджер за секунды, контент клиника ведёт сама, а состояние продакшена проверяется одним health-эндпоинтом.</dd></div>
+        </dl>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Netlify Functions</span><span class="tag">Telegram Bot API</span><span class="tag">SEO</span></div>
+        <a class="visit" href="https://amirdent.netlify.app" target="_blank" rel="noopener">amirdent.netlify.app <span class="arrow">↗</span></a>
+      </div>
+    </article>
 
-  <article class="case">
-    <div class="case-top">
-      <h3>Royal Horse</h3>
-      <a class="link" href="https://royal-horse-lake.vercel.app/" target="_blank" rel="noopener">royal-horse.vercel.app ↗</a>
-    </div>
-    <div class="kind" data-i="c4k">Конный клуб — трёхъязычный сайт с записью</div>
-    <dl class="rows">
-      <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c4t">Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.</dd></div>
-      <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c4s">Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.</dd></div>
-      <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c4r">Запись идёт с сайта, а не только через переписку в соцсетях.</dd></div>
-    </dl>
-    <div class="tags"><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">i18n</span><span class="tag">Vercel</span></div>
-  </article>
+    <article class="case reveal spot">
+      <div class="media">
+        <img src="assets/boostmarine.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Boost Marine — первый экран сайта сервиса катеров">
+        <span class="cap" data-i="b-cap">Главная и вход в каталог услуг</span>
+      </div>
+      <div class="body">
+        <div class="case-top">
+          <h3>Boost Marine</h3>
+          <span class="status live"><i></i><span data-i="st-live2">в продакшене</span></span>
+        </div>
+        <div class="kind" data-i="c1k">Обслуживание и продажа катеров — сайт и внутренняя система</div>
+        <dl class="rows">
+          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c1t">Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.</dd></div>
+          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c1s">Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.</dd></div>
+          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c1r">Все обращения в одном месте с историей, контент выходит регулярно без отдельного копирайтера.</dd></div>
+        </dl>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">LLM API</span><span class="tag">Tailwind</span></div>
+        <a class="visit" href="https://boostmarine.ru/" target="_blank" rel="noopener">boostmarine.ru <span class="arrow">↗</span></a>
+      </div>
+    </article>
 
-  <p class="note" data-i="note">Ещё около десяти проектов под NDA или в разработке — покажу на созвоне.</p>
+    <article class="case flip reveal spot">
+      <div class="media">
+        <img src="assets/dianafarm.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Dianafarm Group — первый экран корпоративного сайта">
+        <span class="cap" data-i="d-cap">Главная многоязычной версии</span>
+      </div>
+      <div class="body">
+        <div class="case-top">
+          <h3>Dianafarm Group</h3>
+          <span class="status live"><i></i><span data-i="st-live3">в продакшене</span></span>
+        </div>
+        <div class="kind" data-i="c2k">Международный консалтинг — многоязычный корпоративный сайт</div>
+        <dl class="rows">
+          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c2t">Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.</dd></div>
+          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c2s">Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.</dd></div>
+          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c2r">Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.</dd></div>
+        </dl>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">i18n</span><span class="tag">SEO</span></div>
+        <a class="visit" href="http://dianafarm.group" target="_blank" rel="noopener">dianafarm.group <span class="arrow">↗</span></a>
+      </div>
+    </article>
+
+    <article class="case reveal spot">
+      <div class="media">
+        <img src="assets/agile-parts.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Agile Parts — первый экран интернет-магазина автозапчастей">
+        <span class="cap" data-i="ap-cap">Главная страница каталога</span>
+      </div>
+      <div class="body">
+        <div class="case-top">
+          <h3>Agile Parts</h3>
+          <span class="status live"><i></i><span data-i="st-live5">в продакшене</span></span>
+        </div>
+        <div class="kind" data-i="c3k">Магазин автозапчастей — интерактивный каталог с 3D</div>
+        <dl class="rows">
+          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c3t">Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.</dd></div>
+          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c3s">Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.</dd></div>
+          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c3r">Магазин выглядит как бренд, а не как выгрузка прайса; карточка товара отвечает на вопросы до обращения в поддержку.</dd></div>
+        </dl>
+        <div class="tags"><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div>
+        <a class="visit" href="https://13auto-storefront.vercel.app/" target="_blank" rel="noopener">13auto-storefront.vercel.app <span class="arrow">↗</span></a>
+      </div>
+    </article>
+
+    <article class="case flip reveal spot">
+      <div class="media">
+        <img src="assets/royalhorse.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Royal Horse — первый экран сайта конного клуба">
+        <span class="cap" data-i="r-cap">Главная, болгарская версия</span>
+      </div>
+      <div class="body">
+        <div class="case-top">
+          <h3>Royal Horse</h3>
+          <span class="status live"><i></i><span data-i="st-live4">в продакшене</span></span>
+        </div>
+        <div class="kind" data-i="c4k">Конный клуб — трёхъязычный сайт с записью</div>
+        <dl class="rows">
+          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c4t">Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.</dd></div>
+          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c4s">Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.</dd></div>
+          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c4r">Запись идёт с сайта, а не только через переписку в соцсетях.</dd></div>
+        </dl>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">i18n</span><span class="tag">Vercel</span></div>
+        <a class="visit" href="https://royal-horse-lake.vercel.app/" target="_blank" rel="noopener">royal-horse.vercel.app <span class="arrow">↗</span></a>
+      </div>
+    </article>
+
+    <article class="case reveal spot">
+      <div class="media">
+        <img src="assets/beefshteks.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="BEEFштекс — первый экран промосайта доставки бургеров">
+        <span class="cap" data-i="bf-cap">Главная страница промосайта</span>
+      </div>
+      <div class="body">
+        <div class="case-top">
+          <h3>BEEFштекс</h3>
+          <span class="status live"><i></i><span data-i="st-live6">в продакшене</span></span>
+        </div>
+        <div class="kind" data-i="c7k">Доставка бургеров — промосайт, каталог и корзина</div>
+        <dl class="rows">
+          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c7t">Передать характер бургерной в онлайне и помочь гостю быстро перейти от яркой подачи бренда к выбору блюд.</dd></div>
+          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c7s">Контрастная промостраница, акции с промокодами, каталог по категориям с фильтрами, карточки блюд и корзина для оформления заказа.</dd></div>
+          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c7r">В одном интерфейсе пользователь видит бренд, актуальные предложения и полное меню, а затем собирает заказ без перехода в мессенджеры.</dd></div>
+        </dl>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">E-commerce</span><span class="tag">i18n</span></div>
+        <a class="visit" href="https://beef-flame.vercel.app/" target="_blank" rel="noopener">beef-flame.vercel.app <span class="arrow">↗</span></a>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="note reveal" data-i="note">Ещё около десяти проектов под NDA или в разработке — покажу на созвоне.</p>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <div class="sechead reveal">
+    <span class="num">02</span><h2 data-i="sec2">Как я работаю</h2>
+    <p data-i="sec2p">Четыре этапа, на каждом виден результат — вы не ждёте месяц, чтобы впервые что-то увидеть.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="n">01</div><h4 data-i="p1h">Разбор задачи</h4><p data-i="p1p">Смотрю, как бизнес получает клиентов сейчас и что именно мешает. На выходе — структура сайта и список того, что действительно нужно.</p></div>
+    <div class="step reveal"><div class="n">02</div><h4 data-i="p2h">Дизайн и прототип</h4><p data-i="p2p">Собираю визуальную спецификацию и макет ключевых экранов до написания кода. Правки на этом этапе бесплатны и быстры.</p></div>
+    <div class="step reveal"><div class="n">03</div><h4 data-i="p3h">Разработка</h4><p data-i="p3p">Фронтенд, бэкенд, админка, интеграции с CRM, мессенджерами и нейросетями. Показываю промежуточные версии на тестовом домене.</p></div>
+    <div class="step reveal"><div class="n">04</div><h4 data-i="p4h">Запуск и поддержка</h4><p data-i="p4p">Домен, хостинг, аналитика, индексация. Дальше — доработки по мере роста задач, без переписывания проекта с нуля.</p></div>
+  </div>
 </div></section>
 
 <section id="stack"><div class="wrap">
-  <div class="sechead"><span class="mono">02</span><h2 data-i="sec2">Стек</h2></div>
+  <div class="sechead reveal">
+    <span class="num">03</span><h2 data-i="sec3">Стек</h2>
+    <p data-i="sec3p">Выбираю инструмент под задачу, а не наоборот: визитке не нужна тяжёлая CMS, каталогу с 3D — конструктор сайтов.</p>
+  </div>
   <div class="stack">
-    <div class="scard"><h4 data-i="k1">Фронтенд</h4><p>React · Next.js<br>TypeScript · Tailwind<br>Three.js</p></div>
-    <div class="scard"><h4 data-i="k2">Бэкенд и данные</h4><p>Node.js · Python<br>PostgreSQL<br>REST · интеграции CRM</p></div>
-    <div class="scard"><h4 data-i="k3">Админки и аналитика</h4><p data-i="k3p">Панели управления<br>Воронки заявок<br>Дашборды и отчёты</p></div>
-    <div class="scard"><h4 data-i="k4">Автоматизация и LLM</h4><p data-i="k4p">Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания</p></div>
+    <div class="scard reveal"><h4 data-i="k1">Фронтенд</h4><p>React · Next.js<br>TypeScript · Tailwind<br>Three.js · WebGL</p></div>
+    <div class="scard reveal"><h4 data-i="k2">Бэкенд и данные</h4><p data-i="k2p">Node.js · Python<br>PostgreSQL<br>REST · интеграции CRM</p></div>
+    <div class="scard reveal"><h4 data-i="k3">Админки и аналитика</h4><p data-i="k3p">Панели управления<br>Воронки заявок<br>Дашборды и отчёты</p></div>
+    <div class="scard reveal"><h4 data-i="k4">Автоматизация и LLM</h4><p data-i="k4p">Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания</p></div>
   </div>
 </div></section>
 
 <section id="contact" class="cta"><div class="wrap">
-  <h2 data-i="ctah">Нужен сайт или веб-сервис?</h2>
-  <p data-i="ctap">Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.</p>
-  <div class="contacts">
-    <a class="btn p" href="https://t.me/stuzhin" target="_blank" rel="noopener">Telegram — @stuzhin</a>
-    <a class="btn s" href="mailto:stuzzhin@mail.ru">stuzzhin@mail.ru</a>
+  <h2 class="reveal" data-i="ctah">Нужен сайт или веб-сервис?</h2>
+  <p class="reveal" data-i="ctap">Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.</p>
+  <div class="contacts reveal">
+    <a class="btn p magnet" href="https://t.me/stuzhin" target="_blank" rel="noopener">Telegram — @stuzhin</a>
+    <button class="btn s magnet copied" id="mail" data-copied="скопировано" data-mail="stuzzhin@mail.ru">stuzzhin@mail.ru</button>
   </div>
 </div></section>
 
@@ -215,21 +494,68 @@ footer{padding:30px 0 46px;font-size:13px;color:var(--dim);display:flex;justify-
 </footer></div>
 
 <script>
+/* ===== i18n ===== */
 const T = {
- nav1:["Работы","Work"], nav2:["Стек","Stack"], nav3:["Контакты","Contact"],
+ nav1:["Работы","Work"], nav2:["Процесс","Process"], nav3:["Стек","Stack"], nav4:["Контакты","Contact"],
  eyebrow:["Фулстек веб-разработка","Full-stack web development"],
  h1a:["Сайты и веб-сервисы,","Websites and web services"],
- h1b:["которые решают задачу бизнеса","that solve a business problem"],
- lead:["Делаю корпоративные сайты, интернет-магазины и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.",
-       "I build corporate sites, online stores and internal tools end to end — from design and frontend to admin panel, analytics and AI integrations. Available for direct clients and agency subcontracting."],
+ h1b:["которые решают","that solve"],
+ h1c:["задачу бизнеса","a business problem"],
+ lead:["Делаю корпоративные сайты, каталоги с конфигураторами и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.",
+       "I build corporate sites, catalogues with configurators and internal tools end to end — from design and frontend to admin panel, analytics and AI integrations. Available for direct clients and agency subcontracting."],
  btn1:["Смотреть работы","See the work"], btn2:["Написать в Telegram","Message on Telegram"],
  s1:["проектов в продакшене","projects in production"],
  s2:["коммерческой разработки","of commercial development"], s2y:["года","years"],
  s3:["основной стек","main stack"],
- sec1:["Избранные работы","Selected work"], sec2:["Стек","Stack"],
- lt:["Задача","Problem"], ls:["Решение","Solution"], lr:["Результат","Outcome"],
 
- c1k:["Обслуживание и продажа катеров — сайт + внутренняя система","Boat service and sales — website plus internal system"],
+ mq1:["Дизайн","Design"], mq2:["Фронтенд","Frontend"], mq3:["Бэкенд","Backend"],
+ mq4:["Админки","Admin panels"], mq5:["Аналитика","Analytics"], mq6:["LLM","LLM"],
+ mq1b:["Дизайн","Design"], mq2b:["Фронтенд","Frontend"], mq3b:["Бэкенд","Backend"],
+ mq4b:["Админки","Admin panels"], mq5b:["Аналитика","Analytics"], mq6b:["LLM","LLM"],
+
+ sec1:["Избранные работы","Selected work"],
+ sec1p:["Каждый проект — от постановки задачи до выкатки в продакшен: дизайн, фронтенд, бэкенд, админка.",
+        "Every project from brief to production: design, frontend, backend, admin panel."],
+ sec2:["Как я работаю","How I work"],
+ sec2p:["Четыре этапа, на каждом виден результат — вы не ждёте месяц, чтобы впервые что-то увидеть.",
+        "Four stages, each with something to look at — you don't wait a month to see the first result."],
+ sec3:["Стек","Stack"],
+ sec3p:["Выбираю инструмент под задачу, а не наоборот: визитке не нужна тяжёлая CMS, каталогу с 3D — конструктор сайтов.",
+        "The tool follows the task: a one-pager doesn't need a heavy CMS, and a 3D catalogue doesn't fit a website builder."],
+
+ lt:["Задача","Problem"], ls:["Решение","Solution"], lr:["Результат","Outcome"],
+ "st-live":["в продакшене","live"], "st-live2":["в продакшене","live"],
+ "st-live3":["в продакшене","live"], "st-live4":["в продакшене","live"],
+ "st-live5":["в продакшене","live"], "st-live6":["в продакшене","live"],
+ "st-wip":["в разработке","in progress"], "st-nda":["под NDA","under NDA"],
+ ndab:["Под NDA","Under NDA"], ndas:["покажу на созвоне","shown on a call"],
+
+ "g-cap":["Главная и вход в конструктор","Home page and entry to the configurator"],
+ "a-cap":["Главная страница клиники","Clinic home page"],
+ "b-cap":["Главная и вход в каталог услуг","Home page and service catalogue"],
+ "d-cap":["Главная многоязычной версии","Home page, multilingual version"],
+ "r-cap":["Главная, болгарская версия","Home page, Bulgarian version"],
+ "ap-cap":["Главная страница каталога","Catalogue home page"],
+ "bf-cap":["Главная страница промосайта","Promo site home page"],
+
+ c5k:["Архитектурно-строительное бюро — каталог проектов и конструктор дома",
+      "Architecture and construction bureau — project catalogue and house configurator"],
+ c5t:["Действующий сайт собран на e-commerce-шаблоне: корзина и «1 товар» под каждым проектом дома, меню на 25 пунктов, а обещанный на первом экране расчёт стоимости никуда не вёл.",
+      "The live site runs on an e-commerce template: a shopping cart and «1 item» under every house project, a 25-item menu, and the price estimate promised on the first screen led nowhere."],
+ c5s:["Каталог проектов со страницей на каждый дом и конструктор на одиннадцать шагов: 3D-модель на Three.js, планировки, собираемые из тех же модулей, что и объём, выгрузка предварительной сметы в PDF. Любой дом из каталога открывается в конструкторе как редактируемая основа.",
+      "A project catalogue with a page per house and an eleven-step configurator: a Three.js 3D model, floor plans generated from the same modules as the volume, and a preliminary estimate exported to PDF. Any catalogue house opens in the configurator as an editable base."],
+ c5r:["Путь «посмотрел проект → собрал свой → получил смету» проходится без звонка менеджеру. Сейчас проект в разработке — покажу вживую на созвоне.",
+      "The path «browse a project → configure your own → get an estimate» works without calling a sales rep. Currently in progress — happy to demo it on a call."],
+
+ c6k:["Стоматология в Москве — сайт с записью и админкой","Dental clinic in Moscow — booking site with an admin panel"],
+ c6t:["Клинике нужен был поток записей с сайта, отдельные страницы под каждую услугу для поиска и возможность менять врачей, цены и тексты без разработчика.",
+      "The clinic needed bookings coming from the site, a separate indexable page per service, and a way to edit doctors, prices and copy without a developer."],
+ c6s:["Одностраничный сайт с ценами и галереей плюс build-шаг, который генерирует индексируемые страницы услуг и sitemap. Заявка сначала сохраняется в хранилище и только потом уходит ботом в Telegram, поэтому сбой мессенджера не уничтожает обращение. Админка правит врачей, услуги и тексты.",
+      "A one-page site with pricing and a gallery, plus a build step that generates indexable service pages and a sitemap. Each request is stored first and only then sent to Telegram by a bot, so a messenger outage never destroys a lead. The admin panel edits doctors, services and copy."],
+ c6r:["Запись приходит администратору в мессенджер за секунды, контент клиника ведёт сама, а состояние продакшена проверяется одним health-эндпоинтом.",
+      "Bookings reach the administrator in seconds, the clinic maintains its own content, and production health is verified by a single endpoint."],
+
+ c1k:["Обслуживание и продажа катеров — сайт и внутренняя система","Boat service and sales — website plus internal system"],
  c1t:["Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.",
       "Leads got lost in messengers, nobody had time for the blog, and the owner couldn't see where clients came from."],
  c1s:["Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.",
@@ -245,7 +571,6 @@ const T = {
  c2r:["Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.",
       "One site now covers several markets, and each service page doubles as an ad landing page."],
 
- c3l:["под NDA — покажу на созвоне","under NDA — shown on a call"],
  c3k:["Магазин автозапчастей — интерактивный каталог с 3D","Auto parts store — interactive catalogue with 3D"],
  c3t:["Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.",
       "Stand out from hundreds of identical catalogues and help buyers understand exactly what they're getting."],
@@ -261,18 +586,43 @@ const T = {
       "A compact site with services and pricing, a booking form that notifies the administrator, and three language versions."],
  c4r:["Запись идёт с сайта, а не только через переписку в соцсетях.","Bookings now come through the site, not only through social media DMs."],
 
+ c7k:["Доставка бургеров — промосайт, каталог и корзина","Burger delivery — promotional site, catalogue and cart"],
+ c7t:["Передать характер бургерной в онлайне и помочь гостю быстро перейти от яркой подачи бренда к выбору блюд.",
+      "Bring the burger brand's character online and help guests move quickly from the bold presentation to choosing their meal."],
+ c7s:["Контрастная промостраница, акции с промокодами, каталог по категориям с фильтрами, карточки блюд и корзина для оформления заказа.",
+      "A high-contrast promotional page, promo-code offers, a filterable category catalogue, product cards, and a cart for placing an order."],
+ c7r:["В одном интерфейсе пользователь видит бренд, актуальные предложения и полное меню, а затем собирает заказ без перехода в мессенджеры.",
+      "One interface presents the brand, current offers, and the full menu, then lets customers build an order without switching to a messenger."],
+
  note:["Ещё около десяти проектов под NDA или в разработке — покажу на созвоне.",
        "Around ten more projects are under NDA or in progress — happy to walk through them on a call."],
+
+ p1h:["Разбор задачи","Understanding the task"],
+ p1p:["Смотрю, как бизнес получает клиентов сейчас и что именно мешает. На выходе — структура сайта и список того, что действительно нужно.",
+      "I look at how the business gets clients today and what actually gets in the way. The output is a site structure and a list of what is genuinely needed."],
+ p2h:["Дизайн и прототип","Design and prototype"],
+ p2p:["Собираю визуальную спецификацию и макет ключевых экранов до написания кода. Правки на этом этапе бесплатны и быстры.",
+      "I produce a visual specification and mock up the key screens before writing code. Changes at this point are free and fast."],
+ p3h:["Разработка","Development"],
+ p3p:["Фронтенд, бэкенд, админка, интеграции с CRM, мессенджерами и нейросетями. Показываю промежуточные версии на тестовом домене.",
+      "Frontend, backend, admin panel, integrations with CRM, messengers and AI models. Work in progress is always visible on a staging domain."],
+ p4h:["Запуск и поддержка","Launch and support"],
+ p4p:["Домен, хостинг, аналитика, индексация. Дальше — доработки по мере роста задач, без переписывания проекта с нуля.",
+      "Domain, hosting, analytics, indexing. After that, changes as the business grows — without rewriting the project from scratch."],
+
  k1:["Фронтенд","Frontend"], k2:["Бэкенд и данные","Backend and data"],
+ k2p:["Node.js · Python<br>PostgreSQL<br>REST · интеграции CRM","Node.js · Python<br>PostgreSQL<br>REST · CRM integrations"],
  k3:["Админки и аналитика","Admin and analytics"],
  k3p:["Панели управления<br>Воронки заявок<br>Дашборды и отчёты","Control panels<br>Lead pipelines<br>Dashboards and reports"],
  k4:["Автоматизация и LLM","Automation and LLM"],
  k4p:["Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания","Telegram bots (aiogram)<br>Content generation<br>Notifications and reminders"],
+
  ctah:["Нужен сайт или веб-сервис?","Need a website or web service?"],
  ctap:["Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.",
        "Tell me about the task — I'll propose a solution, timeline and price. Available end to end or as a subcontractor."],
  foot:["© 2026 Stuzhin — веб-разработка под ключ","© 2026 Stuzhin — end-to-end web development"]
 };
+
 function setLang(l){
   const i = l === 'en' ? 1 : 0;
   document.querySelectorAll('[data-i]').forEach(el=>{
@@ -281,9 +631,90 @@ function setLang(l){
   });
   document.documentElement.lang = l;
   document.title = i ? 'Stuzhin — end-to-end web development' : 'Stuzhin — веб-разработка под ключ';
+  document.getElementById('mail').dataset.copied = i ? 'copied' : 'скопировано';
   bru.classList.toggle('on', !i);
   ben.classList.toggle('on', !!i);
+  try{ localStorage.setItem('lang', l); }catch(e){}
 }
+try{ const saved = localStorage.getItem('lang'); if(saved === 'en') setLang('en'); }catch(e){}
+
+/* ===== nav scroll state ===== */
+const nav = document.getElementById('nav');
+let navTicking = false;
+addEventListener('scroll', () => {
+  if(navTicking) return;
+  navTicking = true;
+  requestAnimationFrame(() => { nav.classList.toggle('scrolled', scrollY > 12); navTicking = false; });
+}, {passive:true});
+
+/* ===== scroll reveal ===== */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {rootMargin:'0px 0px -12% 0px', threshold:.08});
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 60 + 'ms';
+  io.observe(el);
+});
+
+/* ===== pointer-driven light — only on real hover devices ===== */
+const fine = matchMedia('(hover:hover) and (pointer:fine)');
+if(fine.matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const ambient = document.getElementById('ambient');
+  const head = document.querySelector('header');
+  let raf = null, px = 0, py = 0;
+
+  head.addEventListener('pointermove', (e) => {
+    const r = head.getBoundingClientRect();
+    px = ((e.clientX - r.left) / r.width) * 100;
+    py = ((e.clientY - r.top) / r.height) * 100;
+    if(raf) return;
+    raf = requestAnimationFrame(() => {
+      ambient.style.setProperty('--mx', px + '%');
+      ambient.style.setProperty('--my', py + '%');
+      raf = null;
+    });
+  }, {passive:true});
+
+  document.querySelectorAll('.spot').forEach(card => {
+    let r2 = null, cx = 0, cy = 0;
+    card.addEventListener('pointermove', (e) => {
+      const b = card.getBoundingClientRect();
+      cx = e.clientX - b.left; cy = e.clientY - b.top;
+      if(r2) return;
+      r2 = requestAnimationFrame(() => {
+        card.style.setProperty('--mx', cx + 'px');
+        card.style.setProperty('--my', cy + 'px');
+        r2 = null;
+      });
+    }, {passive:true});
+  });
+
+  /* magnetic buttons */
+  document.querySelectorAll('.magnet').forEach(el => {
+    let r3 = null;
+    el.addEventListener('pointermove', (e) => {
+      const b = el.getBoundingClientRect();
+      const dx = (e.clientX - (b.left + b.width/2)) / (b.width/2);
+      const dy = (e.clientY - (b.top + b.height/2)) / (b.height/2);
+      if(r3) return;
+      r3 = requestAnimationFrame(() => { el.style.transform = `translate(${dx*5}px, ${dy*4}px)`; r3 = null; });
+    }, {passive:true});
+    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+}
+
+/* ===== copy e-mail ===== */
+const mail = document.getElementById('mail');
+mail.addEventListener('click', async () => {
+  const addr = mail.dataset.mail;
+  try{
+    await navigator.clipboard.writeText(addr);
+    mail.classList.add('show');
+    setTimeout(() => mail.classList.remove('show'), 1600);
+  }catch(e){
+    location.href = 'mailto:' + addr;
+  }
+});
 </script>
 </body>
 </html>
