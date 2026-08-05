@@ -67,6 +67,9 @@ section{padding:88px 0;border-bottom:1px solid var(--line)}
 .case .link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);white-space:nowrap}
 .case .link:hover{text-decoration:underline}
 .case .link.off{color:var(--dim)}
+.case-preview{display:block;margin:22px 0 26px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg2);aspect-ratio:16/10}
+.case-preview img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.case-preview:hover img{transform:scale(1.018)}
 .rows{display:grid;gap:14px}
 .row{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:start}
 .row dt{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding-top:3px}
@@ -137,6 +140,9 @@ footer{padding:30px 0 46px;font-size:13px;color:var(--dim);display:flex;justify-
       <a class="link" href="https://boostmarine.ru/" target="_blank" rel="noopener">boostmarine.ru ↗</a>
     </div>
     <div class="kind" data-i="c1k">Обслуживание и продажа катеров — сайт + внутренняя система</div>
+    <a class="case-preview" href="https://boostmarine.ru/" target="_blank" rel="noopener" aria-label="Открыть сайт Boost Marine">
+      <img src="assets/projects/boost-marine.webp" alt="Главная страница сайта Boost Marine" width="1440" height="900" loading="lazy" decoding="async">
+    </a>
     <dl class="rows">
       <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c1t">Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.</dd></div>
       <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c1s">Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.</dd></div>
@@ -151,6 +157,9 @@ footer{padding:30px 0 46px;font-size:13px;color:var(--dim);display:flex;justify-
       <a class="link" href="http://dianafarm.group" target="_blank" rel="noopener">dianafarm.group ↗</a>
     </div>
     <div class="kind" data-i="c2k">Международный консалтинг — многоязычный корпоративный сайт</div>
+    <a class="case-preview" href="http://dianafarm.group" target="_blank" rel="noopener" aria-label="Открыть сайт Dianafarm Group">
+      <img src="assets/projects/dianafarm-group.webp" alt="Главная страница сайта Dianafarm Group" width="1440" height="900" loading="lazy" decoding="async">
+    </a>
     <dl class="rows">
       <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c2t">Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.</dd></div>
       <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c2s">Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.</dd></div>
@@ -165,6 +174,9 @@ footer{padding:30px 0 46px;font-size:13px;color:var(--dim);display:flex;justify-
       <a class="link" href="https://13auto-storefront.vercel.app/" target="_blank" rel="noopener">13auto-storefront.vercel.app ↗</a>
     </div>
     <div class="kind" data-i="c3k">Магазин автозапчастей — интерактивный каталог с 3D</div>
+    <a class="case-preview" href="https://13auto-storefront.vercel.app/" target="_blank" rel="noopener" aria-label="Открыть сайт Agile Parts">
+      <img src="assets/projects/agile-parts.webp" alt="Главная страница магазина автозапчастей Agile Parts" width="1440" height="900" loading="lazy" decoding="async">
+    </a>
     <dl class="rows">
       <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c3t">Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.</dd></div>
       <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c3s">Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.</dd></div>
@@ -179,6 +191,9 @@ footer{padding:30px 0 46px;font-size:13px;color:var(--dim);display:flex;justify-
       <a class="link" href="https://royal-horse-lake.vercel.app/" target="_blank" rel="noopener">royal-horse.vercel.app ↗</a>
     </div>
     <div class="kind" data-i="c4k">Конный клуб — трёхъязычный сайт с записью</div>
+    <a class="case-preview" href="https://royal-horse-lake.vercel.app/" target="_blank" rel="noopener" aria-label="Открыть сайт Royal Horse">
+      <img src="assets/projects/royal-horse.webp" alt="Главная страница сайта Royal Horse" width="1440" height="900" loading="lazy" decoding="async">
+    </a>
     <dl class="rows">
       <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c4t">Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.</dd></div>
       <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c4s">Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.</dd></div>
