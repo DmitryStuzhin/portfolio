@@ -1,4 +1,4 @@
-# DESIGN.md — Stuzhin Portfolio
+# DESIGN.md — GuzStudio Portfolio
 
 Спецификация визуального языка одностраничного сайта-визитки.
 Сгенерирована по SKILL `web-design` (Phase B). Код в `index.html` обязан следовать этому документу.
