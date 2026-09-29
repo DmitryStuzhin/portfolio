@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GuzStudio — веб-разработка под ключ</title>
-<meta name="description" content="Фулстек-разработка сайтов и веб-сервисов: Next.js, Node.js, Python, PostgreSQL. Корпоративные сайты, каталоги и конфигураторы, админ-панели, аналитика, интеграции LLM.">
+<title>GuzStudio — end-to-end web development</title>
+<meta name="description" content="End-to-end web development: Next.js, Node.js, Python, PostgreSQL. Corporate sites, catalogues and configurators, admin panels, analytics and LLM integrations.">
 <meta name="theme-color" content="#08090c">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GuzStudio — веб-разработка под ключ">
-<meta property="og:description" content="Сайты и веб-сервисы под ключ: фронтенд, бэкенд, админки, аналитика, интеграции с нейросетями.">
+<meta property="og:title" content="GuzStudio — end-to-end web development">
+<meta property="og:description" content="Websites and web services built end to end: frontend, backend, admin panels, analytics and AI integrations.">
 <meta property="og:image" content="assets/gardarika.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308090c'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23ffb84d'/%3E%3C/svg%3E">
@@ -228,6 +228,7 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
 }
 @media (max-width:640px){
   .navlinks{display:none}
+  .lang button{padding:9px 10px}
   .wrap{padding:0 20px}
   .row{grid-template-columns:1fr;gap:4px}
   .row dt{padding-top:0}
@@ -248,17 +249,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
 <body>
 
 <nav id="nav"><div class="wrap">
-  <a class="logo" href="#top" aria-label="GuzStudio — на главную"><span class="dot"></span>GuzStudio</a>
+  <a class="logo" href="#top" aria-label="GuzStudio — back to top"><span class="dot"></span>GuzStudio</a>
   <div class="navlinks">
-    <a href="#work" data-i="nav1">Работы</a>
-    <a href="#process" data-i="nav2">Процесс</a>
-    <a href="#stack" data-i="nav3">Стек</a>
-    <a href="#contact" data-i="nav4">Контакты</a>
+    <a href="#work" data-i="nav1">Work</a>
+    <a href="#process" data-i="nav2">Process</a>
+    <a href="#stack" data-i="nav3">Stack</a>
+    <a href="#contact" data-i="nav4">Contact</a>
   </div>
   <div class="navright">
     <div class="lang" role="group" aria-label="Language">
-      <button id="bru" class="on" onclick="setLang('ru')">RU</button>
-      <button id="ben" onclick="setLang('en')">EN</button>
+      <button id="ben" class="on" onclick="setLang('en')">EN</button>
+      <button id="bru" onclick="setLang('ru')">RU</button>
+      <button id="bkk" onclick="setLang('kk')">KK</button>
     </div>
   </div>
 </div></nav>
@@ -267,37 +269,37 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
   <div class="ambient" id="ambient" aria-hidden="true"></div>
   <div class="grid-lines" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="eyebrow"><i></i><span data-i="eyebrow">Фулстек веб-разработка</span></div>
+    <div class="eyebrow"><i></i><span data-i="eyebrow">Full-stack web development</span></div>
     <h1>
-      <span class="line"><span data-i="h1a">Сайты и веб-сервисы,</span></span>
-      <span class="line"><span data-i="h1b">которые решают</span></span>
-      <span class="line"><em data-i="h1c">задачу бизнеса</em></span>
+      <span class="line"><span data-i="h1a">Websites and web services</span></span>
+      <span class="line"><span data-i="h1b">that solve</span></span>
+      <span class="line"><em data-i="h1c">a business problem</em></span>
     </h1>
-    <p class="lead" data-i="lead">Делаю корпоративные сайты, каталоги с конфигураторами и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.</p>
+    <p class="lead" data-i="lead">I build corporate sites, catalogues with configurators and internal tools end to end — from design and frontend to admin panel, analytics and AI integrations. Available for direct clients and agency subcontracting.</p>
     <div class="btns">
-      <a class="btn p magnet" href="#work" data-i="btn1">Смотреть работы</a>
-      <a class="btn s magnet" href="https://t.me/stuzhin" target="_blank" rel="noopener" data-i="btn2">Написать в Telegram</a>
+      <a class="btn p magnet" href="#work" data-i="btn1">See the work</a>
+      <a class="btn s magnet" href="https://t.me/stuzhin" target="_blank" rel="noopener" data-i="btn2">Message on Telegram</a>
     </div>
     <div class="stats">
-      <div class="stat"><b>30+</b><span data-i="s1">проектов в продакшене</span></div>
-      <div class="stat"><b>2 <span data-i="s2y">года</span></b><span data-i="s2">коммерческой разработки</span></div>
-      <div class="stat"><b>Next.js</b><span data-i="s3">основной стек</span></div>
+      <div class="stat"><b>30+</b><span data-i="s1">projects in production</span></div>
+      <div class="stat"><b>2 <span data-i="s2y">years</span></b><span data-i="s2">of commercial development</span></div>
+      <div class="stat"><b>Next.js</b><span data-i="s3">main stack</span></div>
     </div>
   </div>
 </header>
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="mq">
-    <span data-i="mq1">Дизайн</span><span class="hi">·</span><span data-i="mq2">Фронтенд</span><span class="hi">·</span><span data-i="mq3">Бэкенд</span><span class="hi">·</span><span data-i="mq4">Админки</span><span class="hi">·</span><span data-i="mq5">Аналитика</span><span class="hi">·</span><span data-i="mq6">LLM</span><span class="hi">·</span>
-    <span data-i="mq1b">Дизайн</span><span class="hi">·</span><span data-i="mq2b">Фронтенд</span><span class="hi">·</span><span data-i="mq3b">Бэкенд</span><span class="hi">·</span><span data-i="mq4b">Админки</span><span class="hi">·</span><span data-i="mq5b">Аналитика</span><span class="hi">·</span><span data-i="mq6b">LLM</span><span class="hi">·</span>
+    <span data-i="mq1">Design</span><span class="hi">·</span><span data-i="mq2">Frontend</span><span class="hi">·</span><span data-i="mq3">Backend</span><span class="hi">·</span><span data-i="mq4">Admin panels</span><span class="hi">·</span><span data-i="mq5">Analytics</span><span class="hi">·</span><span data-i="mq6">LLM</span><span class="hi">·</span>
+    <span data-i="mq1b">Design</span><span class="hi">·</span><span data-i="mq2b">Frontend</span><span class="hi">·</span><span data-i="mq3b">Backend</span><span class="hi">·</span><span data-i="mq4b">Admin panels</span><span class="hi">·</span><span data-i="mq5b">Analytics</span><span class="hi">·</span><span data-i="mq6b">LLM</span><span class="hi">·</span>
   </div>
 </div>
 
 <section id="work"><div class="wrap">
-  <div class="eyebrow reveal"><i></i><span data-i="workEyebrow">Лучшие проекты</span></div>
+  <div class="eyebrow reveal"><i></i><span data-i="workEyebrow">Best projects</span></div>
   <div class="sechead reveal">
-    <span class="num">01</span><h2 data-i="sec1">Избранные работы</h2>
-    <p data-i="sec1p">6 из 30+ реализованных проектов — остальные под NDA или на субподряде, покажу на созвоне.</p>
+    <span class="num">01</span><h2 data-i="sec1">Selected work</h2>
+    <p data-i="sec1p">6 of 30+ delivered projects — the rest are under NDA or subcontracted, happy to show them on a call.</p>
   </div>
 
   <div class="cases">
@@ -306,18 +308,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
       <div class="media">
         <img src="assets/gardarika.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Гардарика — первый экран сайта архитектурно-строительного бюро">
         <img src="assets/gardarika-studio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Гардарика — конструктор дома: выбор проверенной 3D-модели">
-        <span class="cap" data-i="g-cap">Главная и вход в конструктор</span>
+        <span class="cap" data-i="g-cap">Home page and entry to the configurator</span>
       </div>
       <div class="body">
         <div class="case-top">
           <h3>Гардарика</h3>
-          <span class="status wip"><i></i><span data-i="st-wip">в разработке</span></span>
+          <span class="status wip"><i></i><span data-i="st-wip">in progress</span></span>
         </div>
-        <div class="kind" data-i="c5k">Архитектурно-строительное бюро — каталог проектов и конструктор дома</div>
+        <div class="kind" data-i="c5k">Architecture and construction bureau — project catalogue and house configurator</div>
         <dl class="rows">
-          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c5t">Действующий сайт собран на e-commerce-шаблоне: корзина и «1 товар» под каждым проектом дома, меню на 25 пунктов, а обещанный на первом экране расчёт стоимости никуда не вёл.</dd></div>
-          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c5s">Каталог проектов со страницей на каждый дом и конструктор на одиннадцать шагов: 3D-модель на Three.js, планировки, собираемые из тех же модулей, что и объём, выгрузка предварительной сметы в PDF. Любой дом из каталога открывается в конструкторе как редактируемая основа.</dd></div>
-          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c5r">Путь «посмотрел проект → собрал свой → получил смету» проходится без звонка менеджеру. Сейчас проект в разработке — покажу вживую на созвоне.</dd></div>
+          <div class="row"><dt data-i="lt">Problem</dt><dd data-i="c5t">The live site runs on an e-commerce template: a shopping cart and «1 item» under every house project, a 25-item menu, and the price estimate promised on the first screen led nowhere.</dd></div>
+          <div class="row"><dt data-i="ls">Solution</dt><dd data-i="c5s">A project catalogue with a page per house and an eleven-step configurator: a Three.js 3D model, floor plans generated from the same modules as the volume, and a preliminary estimate exported to PDF. Any catalogue house opens in the configurator as an editable base.</dd></div>
+          <div class="row"><dt data-i="lr">Outcome</dt><dd data-i="c5r">The path «browse a project → configure your own → get an estimate» works without calling a sales rep. Currently in progress — happy to demo it on a call.</dd></div>
         </dl>
         <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">WebGL</span><span class="tag">jsPDF</span><span class="tag">Static build</span></div>
         <a class="visit" href="https://gardarika.рф" target="_blank" rel="noopener">gardarika.рф <span class="arrow">↗</span></a>
@@ -327,18 +329,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
     <article class="case flip reveal spot">
       <div class="media">
         <img src="assets/amirdent.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="АмирДент — первый экран сайта стоматологической клиники">
-        <span class="cap" data-i="a-cap">Главная страница клиники</span>
+        <span class="cap" data-i="a-cap">Clinic home page</span>
       </div>
       <div class="body">
         <div class="case-top">
           <h3>АмирДент</h3>
-          <span class="status live"><i></i><span data-i="st-live">в продакшене</span></span>
+          <span class="status live"><i></i><span data-i="st-live">live</span></span>
         </div>
-        <div class="kind" data-i="c6k">Стоматология в Москве — сайт с записью и админкой</div>
+        <div class="kind" data-i="c6k">Dental clinic in Moscow — booking site with an admin panel</div>
         <dl class="rows">
-          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c6t">Клинике нужен был поток записей с сайта, отдельные страницы под каждую услугу для поиска и возможность менять врачей, цены и тексты без разработчика.</dd></div>
-          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c6s">Одностраничный сайт с ценами и галереей плюс build-шаг, который генерирует индексируемые страницы услуг и sitemap. Заявка сначала сохраняется в хранилище и только потом уходит ботом в Telegram, поэтому сбой мессенджера не уничтожает обращение. Админка правит врачей, услуги и тексты.</dd></div>
-          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c6r">Запись приходит администратору в мессенджер за секунды, контент клиника ведёт сама, а состояние продакшена проверяется одним health-эндпоинтом.</dd></div>
+          <div class="row"><dt data-i="lt">Problem</dt><dd data-i="c6t">The clinic needed bookings coming from the site, a separate indexable page per service, and a way to edit doctors, prices and copy without a developer.</dd></div>
+          <div class="row"><dt data-i="ls">Solution</dt><dd data-i="c6s">A one-page site with pricing and a gallery, plus a build step that generates indexable service pages and a sitemap. Each request is stored first and only then sent to Telegram by a bot, so a messenger outage never destroys a lead. The admin panel edits doctors, services and copy.</dd></div>
+          <div class="row"><dt data-i="lr">Outcome</dt><dd data-i="c6r">Bookings reach the administrator in seconds, the clinic maintains its own content, and production health is verified by a single endpoint.</dd></div>
         </dl>
         <div class="tags"><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Netlify Functions</span><span class="tag">Telegram Bot API</span><span class="tag">SEO</span></div>
         <a class="visit" href="https://amirdent.netlify.app" target="_blank" rel="noopener">amirdent.netlify.app <span class="arrow">↗</span></a>
@@ -348,18 +350,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
     <article class="case reveal spot">
       <div class="media">
         <img src="assets/boostmarine.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Boost Marine — первый экран сайта сервиса катеров">
-        <span class="cap" data-i="b-cap">Главная и вход в каталог услуг</span>
+        <span class="cap" data-i="b-cap">Home page and service catalogue</span>
       </div>
       <div class="body">
         <div class="case-top">
           <h3>Boost Marine</h3>
-          <span class="status live"><i></i><span data-i="st-live2">в продакшене</span></span>
+          <span class="status live"><i></i><span data-i="st-live2">live</span></span>
         </div>
-        <div class="kind" data-i="c1k">Обслуживание и продажа катеров — сайт и внутренняя система</div>
+        <div class="kind" data-i="c1k">Boat service and sales — website plus internal system</div>
         <dl class="rows">
-          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c1t">Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.</dd></div>
-          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c1s">Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.</dd></div>
-          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c1r">Все обращения в одном месте с историей, контент выходит регулярно без отдельного копирайтера.</dd></div>
+          <div class="row"><dt data-i="lt">Problem</dt><dd data-i="c1t">Leads got lost in messengers, nobody had time for the blog, and the owner couldn't see where clients came from.</dd></div>
+          <div class="row"><dt data-i="ls">Solution</dt><dd data-i="c1s">Service catalogue site, admin panel with a lead pipeline and source analytics, and LLM-drafted blog articles with manual review.</dd></div>
+          <div class="row"><dt data-i="lr">Outcome</dt><dd data-i="c1r">Every enquiry lives in one place with its history, and the blog ships regularly without a copywriter.</dd></div>
         </dl>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">LLM API</span><span class="tag">Tailwind</span></div>
         <a class="visit" href="https://boostmarine.ru/" target="_blank" rel="noopener">boostmarine.ru <span class="arrow">↗</span></a>
@@ -369,18 +371,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
     <article class="case flip reveal spot">
       <div class="media">
         <img src="assets/dianafarm.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Dianafarm Group — первый экран корпоративного сайта">
-        <span class="cap" data-i="d-cap">Главная многоязычной версии</span>
+        <span class="cap" data-i="d-cap">Home page, multilingual version</span>
       </div>
       <div class="body">
         <div class="case-top">
           <h3>Dianafarm Group</h3>
-          <span class="status live"><i></i><span data-i="st-live3">в продакшене</span></span>
+          <span class="status live"><i></i><span data-i="st-live3">live</span></span>
         </div>
-        <div class="kind" data-i="c2k">Международный консалтинг — многоязычный корпоративный сайт</div>
+        <div class="kind" data-i="c2k">International consulting — multilingual corporate site</div>
         <dl class="rows">
-          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c2t">Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.</dd></div>
-          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c2s">Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.</dd></div>
-          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c2r">Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.</dd></div>
+          <div class="row"><dt data-i="lt">Problem</dt><dd data-i="c2t">The firm works across the EU, UAE and Bulgaria with services split by industry — the old site made it hard to find the right one.</dd></div>
+          <div class="row"><dt data-i="ls">Solution</dt><dd data-i="c2s">An industry-to-service structure with dedicated landing pages, full localisation, and one enquiry form routed by service line.</dd></div>
+          <div class="row"><dt data-i="lr">Outcome</dt><dd data-i="c2r">One site now covers several markets, and each service page doubles as an ad landing page.</dd></div>
         </dl>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">i18n</span><span class="tag">SEO</span></div>
         <a class="visit" href="http://dianafarm.group" target="_blank" rel="noopener">dianafarm.group <span class="arrow">↗</span></a>
@@ -390,18 +392,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
     <article class="case reveal spot">
       <div class="media">
         <img src="assets/agile-parts.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Agile Parts — первый экран интернет-магазина автозапчастей">
-        <span class="cap" data-i="ap-cap">Главная страница каталога</span>
+        <span class="cap" data-i="ap-cap">Catalogue home page</span>
       </div>
       <div class="body">
         <div class="case-top">
           <h3>Agile Parts</h3>
-          <span class="status live"><i></i><span data-i="st-live5">в продакшене</span></span>
+          <span class="status live"><i></i><span data-i="st-live5">live</span></span>
         </div>
-        <div class="kind" data-i="c3k">Магазин автозапчастей — интерактивный каталог с 3D</div>
+        <div class="kind" data-i="c3k">Auto parts store — interactive catalogue with 3D</div>
         <dl class="rows">
-          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c3t">Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.</dd></div>
-          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c3s">Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.</dd></div>
-          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c3r">Магазин выглядит как бренд, а не как выгрузка прайса; карточка товара отвечает на вопросы до обращения в поддержку.</dd></div>
+          <div class="row"><dt data-i="lt">Problem</dt><dd data-i="c3t">Stand out from hundreds of identical catalogues and help buyers understand exactly what they're getting.</dd></div>
+          <div class="row"><dt data-i="ls">Solution</dt><dd data-i="c3s">Custom identity, 3D product renders on the item page, an interactive home page, and catalogue filters by vehicle fit.</dd></div>
+          <div class="row"><dt data-i="lr">Outcome</dt><dd data-i="c3r">The store reads as a brand rather than a price-list dump, and product pages answer questions before support has to.</dd></div>
         </dl>
         <div class="tags"><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div>
         <a class="visit" href="https://13auto-storefront.vercel.app/" target="_blank" rel="noopener">13auto-storefront.vercel.app <span class="arrow">↗</span></a>
@@ -411,18 +413,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
     <article class="case flip reveal spot">
       <div class="media">
         <img src="assets/royalhorse.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Royal Horse — первый экран сайта конного клуба">
-        <span class="cap" data-i="r-cap">Главная, болгарская версия</span>
+        <span class="cap" data-i="r-cap">Home page, Bulgarian version</span>
       </div>
       <div class="body">
         <div class="case-top">
           <h3>Royal Horse</h3>
-          <span class="status live"><i></i><span data-i="st-live4">в продакшене</span></span>
+          <span class="status live"><i></i><span data-i="st-live4">live</span></span>
         </div>
-        <div class="kind" data-i="c4k">Конный клуб — трёхъязычный сайт с записью</div>
+        <div class="kind" data-i="c4k">Equestrian club — trilingual site with booking</div>
         <dl class="rows">
-          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c4t">Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.</dd></div>
-          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c4s">Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.</dd></div>
-          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c4r">Запись идёт с сайта, а не только через переписку в соцсетях.</dd></div>
+          <div class="row"><dt data-i="lt">Problem</dt><dd data-i="c4t">Present the club's services and take bookings from an audience speaking three languages.</dd></div>
+          <div class="row"><dt data-i="ls">Solution</dt><dd data-i="c4s">A compact site with services and pricing, a booking form that notifies the administrator, and three language versions.</dd></div>
+          <div class="row"><dt data-i="lr">Outcome</dt><dd data-i="c4r">Bookings now come through the site, not only through social media DMs.</dd></div>
         </dl>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">i18n</span><span class="tag">Vercel</span></div>
         <a class="visit" href="https://royal-horse-lake.vercel.app/" target="_blank" rel="noopener">royal-horse.vercel.app <span class="arrow">↗</span></a>
@@ -432,18 +434,18 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
     <article class="case reveal spot">
       <div class="media">
         <img src="assets/beefshteks.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="BEEFштекс — первый экран промосайта доставки бургеров">
-        <span class="cap" data-i="bf-cap">Главная страница промосайта</span>
+        <span class="cap" data-i="bf-cap">Promo site home page</span>
       </div>
       <div class="body">
         <div class="case-top">
           <h3>BEEFштекс</h3>
-          <span class="status live"><i></i><span data-i="st-live6">в продакшене</span></span>
+          <span class="status live"><i></i><span data-i="st-live6">live</span></span>
         </div>
-        <div class="kind" data-i="c7k">Доставка бургеров — промосайт, каталог и корзина</div>
+        <div class="kind" data-i="c7k">Burger delivery — promotional site, catalogue and cart</div>
         <dl class="rows">
-          <div class="row"><dt data-i="lt">Задача</dt><dd data-i="c7t">Передать характер бургерной в онлайне и помочь гостю быстро перейти от яркой подачи бренда к выбору блюд.</dd></div>
-          <div class="row"><dt data-i="ls">Решение</dt><dd data-i="c7s">Контрастная промостраница, акции с промокодами, каталог по категориям с фильтрами, карточки блюд и корзина для оформления заказа.</dd></div>
-          <div class="row"><dt data-i="lr">Результат</dt><dd data-i="c7r">В одном интерфейсе пользователь видит бренд, актуальные предложения и полное меню, а затем собирает заказ без перехода в мессенджеры.</dd></div>
+          <div class="row"><dt data-i="lt">Problem</dt><dd data-i="c7t">Bring the burger brand's character online and help guests move quickly from the bold presentation to choosing their meal.</dd></div>
+          <div class="row"><dt data-i="ls">Solution</dt><dd data-i="c7s">A high-contrast promotional page, promo-code offers, a filterable category catalogue, product cards, and a cart for placing an order.</dd></div>
+          <div class="row"><dt data-i="lr">Outcome</dt><dd data-i="c7r">One interface presents the brand, current offers, and the full menu, then lets customers build an order without switching to a messenger.</dd></div>
         </dl>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">E-commerce</span><span class="tag">i18n</span></div>
         <a class="visit" href="https://beef-flame.vercel.app/" target="_blank" rel="noopener">beef-flame.vercel.app <span class="arrow">↗</span></a>
@@ -452,38 +454,38 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
 
   </div>
 
-  <p class="note reveal" data-i="note">Остальные проекты — под NDA или на субподряде, покажу на созвоне.</p>
+  <p class="note reveal" data-i="note">The rest of the projects are under NDA or subcontracted — happy to walk through them on a call.</p>
 </div></section>
 
 <section id="process"><div class="wrap">
   <div class="sechead reveal">
-    <span class="num">02</span><h2 data-i="sec2">Как я работаю</h2>
-    <p data-i="sec2p">Четыре этапа, на каждом виден результат — вы не ждёте месяц, чтобы впервые что-то увидеть.</p>
+    <span class="num">02</span><h2 data-i="sec2">How I work</h2>
+    <p data-i="sec2p">Four stages, each with something to look at — you don't wait a month to see the first result.</p>
   </div>
   <div class="steps">
-    <div class="step reveal"><div class="n">01</div><h4 data-i="p1h">Разбор задачи</h4><p data-i="p1p">Смотрю, как бизнес получает клиентов сейчас и что именно мешает. На выходе — структура сайта и список того, что действительно нужно.</p></div>
-    <div class="step reveal"><div class="n">02</div><h4 data-i="p2h">Дизайн и прототип</h4><p data-i="p2p">Собираю визуальную спецификацию и макет ключевых экранов до написания кода. Правки на этом этапе бесплатны и быстры.</p></div>
-    <div class="step reveal"><div class="n">03</div><h4 data-i="p3h">Разработка</h4><p data-i="p3p">Фронтенд, бэкенд, админка, интеграции с CRM, мессенджерами и нейросетями. Показываю промежуточные версии на тестовом домене.</p></div>
-    <div class="step reveal"><div class="n">04</div><h4 data-i="p4h">Запуск и поддержка</h4><p data-i="p4p">Домен, хостинг, аналитика, индексация. Дальше — доработки по мере роста задач, без переписывания проекта с нуля.</p></div>
+    <div class="step reveal"><div class="n">01</div><h4 data-i="p1h">Understanding the task</h4><p data-i="p1p">I look at how the business gets clients today and what actually gets in the way. The output is a site structure and a list of what is genuinely needed.</p></div>
+    <div class="step reveal"><div class="n">02</div><h4 data-i="p2h">Design and prototype</h4><p data-i="p2p">I produce a visual specification and mock up the key screens before writing code. Changes at this point are free and fast.</p></div>
+    <div class="step reveal"><div class="n">03</div><h4 data-i="p3h">Development</h4><p data-i="p3p">Frontend, backend, admin panel, integrations with CRM, messengers and AI models. Work in progress is always visible on a staging domain.</p></div>
+    <div class="step reveal"><div class="n">04</div><h4 data-i="p4h">Launch and support</h4><p data-i="p4p">Domain, hosting, analytics, indexing. After that, changes as the business grows — without rewriting the project from scratch.</p></div>
   </div>
 </div></section>
 
 <section id="stack"><div class="wrap">
   <div class="sechead reveal">
-    <span class="num">03</span><h2 data-i="sec3">Стек</h2>
-    <p data-i="sec3p">Выбираю инструмент под задачу, а не наоборот: визитке не нужна тяжёлая CMS, каталогу с 3D — конструктор сайтов.</p>
+    <span class="num">03</span><h2 data-i="sec3">Stack</h2>
+    <p data-i="sec3p">The tool follows the task: a one-pager doesn't need a heavy CMS, and a 3D catalogue doesn't fit a website builder.</p>
   </div>
   <div class="stack">
-    <div class="scard reveal"><h4 data-i="k1">Фронтенд</h4><p>React · Next.js<br>TypeScript · Tailwind<br>Three.js · WebGL</p></div>
-    <div class="scard reveal"><h4 data-i="k2">Бэкенд и данные</h4><p data-i="k2p">Node.js · Python<br>PostgreSQL<br>REST · интеграции CRM</p></div>
-    <div class="scard reveal"><h4 data-i="k3">Админки и аналитика</h4><p data-i="k3p">Панели управления<br>Воронки заявок<br>Дашборды и отчёты</p></div>
-    <div class="scard reveal"><h4 data-i="k4">Автоматизация и LLM</h4><p data-i="k4p">Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания</p></div>
+    <div class="scard reveal"><h4 data-i="k1">Frontend</h4><p>React · Next.js<br>TypeScript · Tailwind<br>Three.js · WebGL</p></div>
+    <div class="scard reveal"><h4 data-i="k2">Backend and data</h4><p data-i="k2p">Node.js · Python<br>PostgreSQL<br>REST · CRM integrations</p></div>
+    <div class="scard reveal"><h4 data-i="k3">Admin and analytics</h4><p data-i="k3p">Control panels<br>Lead pipelines<br>Dashboards and reports</p></div>
+    <div class="scard reveal"><h4 data-i="k4">Automation and LLM</h4><p data-i="k4p">Telegram bots (aiogram)<br>Content generation<br>Notifications and reminders</p></div>
   </div>
 </div></section>
 
 <section id="contact" class="cta"><div class="wrap">
-  <h2 class="reveal" data-i="ctah">Нужен сайт или веб-сервис?</h2>
-  <p class="reveal" data-i="ctap">Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.</p>
+  <h2 class="reveal" data-i="ctah">Need a website or web service?</h2>
+  <p class="reveal" data-i="ctap">Tell me about the task — I'll propose a solution, timeline and price. Available end to end or as a subcontractor.</p>
   <div class="contacts reveal">
     <a class="btn p magnet" href="https://t.me/stuzhin" target="_blank" rel="noopener">Telegram — @stuzhin</a>
     <button class="btn s magnet copied" id="mail" data-copied="скопировано" data-mail="rozeeeewwe@gmail.com">rozeeeewwe@gmail.com</button>
@@ -491,156 +493,144 @@ footer{padding:32px 0 52px;font-size:13px;color:var(--dim);display:flex;justify-
 </div></section>
 
 <div class="wrap"><footer>
-  <span data-i="foot">© 2026 GuzStudio — веб-разработка под ключ</span>
-  <span class="mono" data-i="loc">Алматы · remote</span>
+  <span data-i="foot">© 2026 GuzStudio — end-to-end web development</span>
+  <span class="mono" data-i="loc">Almaty · remote</span>
 </footer></div>
 
 <script>
 /* ===== i18n ===== */
 const T = {
- nav1:["Работы","Work"], nav2:["Процесс","Process"], nav3:["Стек","Stack"], nav4:["Контакты","Contact"],
- eyebrow:["Фулстек веб-разработка","Full-stack web development"],
- workEyebrow:["Лучшие проекты","Best projects"],
- h1a:["Сайты и веб-сервисы,","Websites and web services"],
- h1b:["которые решают","that solve"],
- h1c:["задачу бизнеса","a business problem"],
- lead:["Делаю корпоративные сайты, каталоги с конфигураторами и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.",
-       "I build corporate sites, catalogues with configurators and internal tools end to end — from design and frontend to admin panel, analytics and AI integrations. Available for direct clients and agency subcontracting."],
- btn1:["Смотреть работы","See the work"], btn2:["Написать в Telegram","Message on Telegram"],
- s1:["проектов в продакшене","projects in production"],
- s2:["коммерческой разработки","of commercial development"], s2y:["года","years"],
- s3:["основной стек","main stack"],
+ nav1:["Работы","Work","Жұмыстар"],
+ nav2:["Процесс","Process","Процесс"],
+ nav3:["Стек","Stack","Стек"],
+ nav4:["Контакты","Contact","Байланыс"],
+ eyebrow:["Фулстек веб-разработка","Full-stack web development","Фулстек веб-әзірлеу"],
+ workEyebrow:["Лучшие проекты","Best projects","Үздік жобалар"],
+ h1a:["Сайты и веб-сервисы,","Websites and web services","Бизнестің нақты"],
+ h1b:["которые решают","that solve","міндетін шешетін"],
+ h1c:["задачу бизнеса","a business problem","сайттар мен веб-сервистер"],
+ lead:["Делаю корпоративные сайты, каталоги с конфигураторами и внутренние сервисы под ключ: от дизайна и фронтенда до админ-панели, аналитики и интеграций с нейросетями. Работаю напрямую с бизнесом и на субподряд у студий.","I build corporate sites, catalogues with configurators and internal tools end to end — from design and frontend to admin panel, analytics and AI integrations. Available for direct clients and agency subcontracting.","Корпоративтік сайттарды, конфигураторы бар каталогтарды және ішкі сервистерді кілтпен тапсырамын: дизайн мен фронтендтен бастап админ-панель, аналитика және нейрожелі интеграцияларына дейін. Бизнеспен тікелей және студияларға субмердігер ретінде жұмыс істеймін."],
+ btn1:["Смотреть работы","See the work","Жұмыстарды көру"],
+ btn2:["Написать в Telegram","Message on Telegram","Telegram-ға жазу"],
+ s1:["проектов в продакшене","projects in production","жоба продакшенде"],
+ s2:["коммерческой разработки","of commercial development","коммерциялық әзірлеу"],
+ s2y:["года","years","жыл"],
+ s3:["основной стек","main stack","негізгі стек"],
+ mq1:["Дизайн","Design","Дизайн"],
+ mq2:["Фронтенд","Frontend","Фронтенд"],
+ mq3:["Бэкенд","Backend","Бэкенд"],
+ mq4:["Админки","Admin panels","Админ-панельдер"],
+ mq5:["Аналитика","Analytics","Аналитика"],
+ mq6:["LLM","LLM","LLM"],
+ mq1b:["Дизайн","Design","Дизайн"],
+ mq2b:["Фронтенд","Frontend","Фронтенд"],
+ mq3b:["Бэкенд","Backend","Бэкенд"],
+ mq4b:["Админки","Admin panels","Админ-панельдер"],
+ mq5b:["Аналитика","Analytics","Аналитика"],
+ mq6b:["LLM","LLM","LLM"],
+ sec1:["Избранные работы","Selected work","Таңдаулы жұмыстар"],
+ sec1p:["6 из 30+ реализованных проектов — остальные под NDA или на субподряде, покажу на созвоне.","6 of 30+ delivered projects — the rest are under NDA or subcontracted, happy to show them on a call.","Жүзеге асқан 30+ жобаның 6-уы — қалғандары NDA аясында немесе субмердігерлік, қоңырау кезінде көрсетемін."],
+ sec2:["Как я работаю","How I work","Қалай жұмыс істеймін"],
+ sec2p:["Четыре этапа, на каждом виден результат — вы не ждёте месяц, чтобы впервые что-то увидеть.","Four stages, each with something to look at — you don't wait a month to see the first result.","Төрт кезең, әрқайсысында нәтиже көрінеді — алғашқы нәтижені көру үшін бір ай күтпейсіз."],
+ sec3:["Стек","Stack","Стек"],
+ sec3p:["Выбираю инструмент под задачу, а не наоборот: визитке не нужна тяжёлая CMS, каталогу с 3D — конструктор сайтов.","The tool follows the task: a one-pager doesn't need a heavy CMS, and a 3D catalogue doesn't fit a website builder.","Құралды міндетке қарай таңдаймын, керісінше емес: визиткаға ауыр CMS қажет емес, 3D каталогқа сайт конструкторы жарамайды."],
+ lt:["Задача","Problem","Міндет"],
+ ls:["Решение","Solution","Шешім"],
+ lr:["Результат","Outcome","Нәтиже"],
+ "st-live":["в продакшене","live","продакшенде"],
+ "st-live2":["в продакшене","live","продакшенде"],
+ "st-live3":["в продакшене","live","продакшенде"],
+ "st-live4":["в продакшене","live","продакшенде"],
+ "st-live5":["в продакшене","live","продакшенде"],
+ "st-live6":["в продакшене","live","продакшенде"],
+ "st-wip":["в разработке","in progress","әзірленуде"],
+ "st-nda":["под NDA","under NDA","NDA аясында"],
+ ndab:["Под NDA","Under NDA","NDA аясында"],
+ ndas:["покажу на созвоне","shown on a call","қоңырауда көрсетемін"],
+ "g-cap":["Главная и вход в конструктор","Home page and entry to the configurator","Басты бет және конструкторға кіру"],
+ "a-cap":["Главная страница клиники","Clinic home page","Клиниканың басты беті"],
+ "b-cap":["Главная и вход в каталог услуг","Home page and service catalogue","Басты бет және қызметтер каталогы"],
+ "d-cap":["Главная многоязычной версии","Home page, multilingual version","Көптілді нұсқаның басты беті"],
+ "r-cap":["Главная, болгарская версия","Home page, Bulgarian version","Басты бет, болгар нұсқасы"],
+ "ap-cap":["Главная страница каталога","Catalogue home page","Каталогтың басты беті"],
+ "bf-cap":["Главная страница промосайта","Promo site home page","Промосайттың басты беті"],
+ c5k:["Архитектурно-строительное бюро — каталог проектов и конструктор дома","Architecture and construction bureau — project catalogue and house configurator","Сәулет-құрылыс бюросы — жобалар каталогы және үй конструкторы"],
+ c5t:["Действующий сайт собран на e-commerce-шаблоне: корзина и «1 товар» под каждым проектом дома, меню на 25 пунктов, а обещанный на первом экране расчёт стоимости никуда не вёл.","The live site runs on an e-commerce template: a shopping cart and «1 item» under every house project, a 25-item menu, and the price estimate promised on the first screen led nowhere.","Жұмыс істеп тұрған сайт e-commerce шаблонына құрылған: әр үй жобасының астында себет пен «1 тауар», 25 тармақты мәзір, ал бірінші экранда уәде етілген құн есебі еш жерге апармайды."],
+ c5s:["Каталог проектов со страницей на каждый дом и конструктор на одиннадцать шагов: 3D-модель на Three.js, планировки, собираемые из тех же модулей, что и объём, выгрузка предварительной сметы в PDF. Любой дом из каталога открывается в конструкторе как редактируемая основа.","A project catalogue with a page per house and an eleven-step configurator: a Three.js 3D model, floor plans generated from the same modules as the volume, and a preliminary estimate exported to PDF. Any catalogue house opens in the configurator as an editable base.","Әр үйге жеке беті бар жобалар каталогы және он бір қадамдық конструктор: Three.js-тегі 3D-модель, көлеммен бірдей модульдерден жиналатын жоспарлар, алдын ала сметаны PDF-ке шығару. Каталогтағы кез келген үй конструкторда өңдеуге болатын негіз ретінде ашылады."],
+ c5r:["Путь «посмотрел проект → собрал свой → получил смету» проходится без звонка менеджеру. Сейчас проект в разработке — покажу вживую на созвоне.","The path «browse a project → configure your own → get an estimate» works without calling a sales rep. Currently in progress — happy to demo it on a call.","«Жобаны көрдім → өзімдікін жинадым → смета алдым» жолы менеджерге қоңырау шалмай өтеді. Қазір жоба әзірленуде — қоңырау кезінде тікелей көрсетемін."],
+ c6k:["Стоматология в Москве — сайт с записью и админкой","Dental clinic in Moscow — booking site with an admin panel","Мәскеудегі стоматология — жазылуы мен админкасы бар сайт"],
+ c6t:["Клинике нужен был поток записей с сайта, отдельные страницы под каждую услугу для поиска и возможность менять врачей, цены и тексты без разработчика.","The clinic needed bookings coming from the site, a separate indexable page per service, and a way to edit doctors, prices and copy without a developer.","Клиникаға сайттан келетін жазылу ағыны, іздеу үшін әр қызметке жеке бет және дәрігерлерді, бағаларды, мәтіндерді әзірлеушісіз өзгерту мүмкіндігі қажет болды."],
+ c6s:["Одностраничный сайт с ценами и галереей плюс build-шаг, который генерирует индексируемые страницы услуг и sitemap. Заявка сначала сохраняется в хранилище и только потом уходит ботом в Telegram, поэтому сбой мессенджера не уничтожает обращение. Админка правит врачей, услуги и тексты.","A one-page site with pricing and a gallery, plus a build step that generates indexable service pages and a sitemap. Each request is stored first and only then sent to Telegram by a bot, so a messenger outage never destroys a lead. The admin panel edits doctors, services and copy.","Бағалары мен галереясы бар бір беттік сайт, оған қоса индекстелетін қызмет беттері мен sitemap жасайтын build-қадам. Өтінім алдымен қоймаға сақталады да, содан кейін ғана Telegram-ға ботпен жіберіледі, сондықтан мессенджердің ақауы өтінімді жоймайды. Админка дәрігерлерді, қызметтерді және мәтіндерді өңдейді."],
+ c6r:["Запись приходит администратору в мессенджер за секунды, контент клиника ведёт сама, а состояние продакшена проверяется одним health-эндпоинтом.","Bookings reach the administrator in seconds, the clinic maintains its own content, and production health is verified by a single endpoint.","Жазылу әкімшіге мессенджерге секундтарда келеді, мазмұнды клиника өзі жүргізеді, ал продакшен күйі бір health-эндпоинтпен тексеріледі."],
+ c1k:["Обслуживание и продажа катеров — сайт и внутренняя система","Boat service and sales — website plus internal system","Катерлерге қызмет көрсету және сату — сайт пен ішкі жүйе"],
+ c1t:["Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.","Leads got lost in messengers, nobody had time for the blog, and the owner couldn't see where clients came from.","Өтінімдер мессенджерлерде жоғалып кететін, блог жүргізетін адам болмады, иесі клиенттердің қайдан келетінін көрмеді."],
+ c1s:["Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.","Service catalogue site, admin panel with a lead pipeline and source analytics, and LLM-drafted blog articles with manual review.","Қызметтер каталогы бар сайт, өтінім воронкасы мен дереккөздер аналитикасы бар админ-панель, блогқа арналған мақала жобаларын LLM арқылы қолмен модерациялап жасау."],
+ c1r:["Все обращения в одном месте с историей, контент выходит регулярно без отдельного копирайтера.","Every enquiry lives in one place with its history, and the blog ships regularly without a copywriter.","Барлық өтініш тарихымен бір жерде, мазмұн бөлек копирайтерсіз тұрақты шығады."],
+ c2k:["Международный консалтинг — многоязычный корпоративный сайт","International consulting — multilingual corporate site","Халықаралық консалтинг — көптілді корпоративтік сайт"],
+ c2t:["Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.","The firm works across the EU, UAE and Bulgaria with services split by industry — the old site made it hard to find the right one.","Компания ЕО, БАӘ және Болгарияда жұмыс істейді, қызметтер салалар бойынша бөлінген — бұрынғы сайт клиентке өз бағытын тез табуға мүмкіндік бермеді."],
+ c2s:["Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.","An industry-to-service structure with dedicated landing pages, full localisation, and one enquiry form routed by service line.","«Сала → қызмет» құрылымы жеке қону беттерімен, көптілділік, бағыт бойынша бағытталатын біртұтас өтінім формасы."],
+ c2r:["Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.","One site now covers several markets, and each service page doubles as an ad landing page.","Сайт бірнеше нарықты бір ресурспен жабады, қызмет беттерін жарнамалық қону беті ретінде жүргізуге болады."],
+ c3k:["Магазин автозапчастей — интерактивный каталог с 3D","Auto parts store — interactive catalogue with 3D","Автобөлшектер дүкені — 3D-мен интерактивті каталог"],
+ c3t:["Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.","Stand out from hundreds of identical catalogues and help buyers understand exactly what they're getting.","Дүкенді жүздеген бірдей каталогтың арасынан ерекшелеу және сатып алушыға нақты не алып жатқанын түсінуге көмектесу."],
+ c3s:["Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.","Custom identity, 3D product renders on the item page, an interactive home page, and catalogue filters by vehicle fit.","Меншікті айдентика, тауар карточкасындағы 3D-рендерлер, интерактивті басты бет, үйлесімділік бойынша сүзгілері бар каталог."],
+ c3r:["Магазин выглядит как бренд, а не как выгрузка прайса; карточка товара отвечает на вопросы до обращения в поддержку.","The store reads as a brand rather than a price-list dump, and product pages answer questions before support has to.","Дүкен прайс-парақтың көшірмесі емес, бренд сияқты көрінеді; тауар карточкасы қолдау қызметіне жүгінбей-ақ сұрақтарға жауап береді."],
+ c4k:["Конный клуб — трёхъязычный сайт с записью","Equestrian club — trilingual site with booking","Ат клубы — жазылуы бар үштілді сайт"],
+ c4t:["Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.","Present the club's services and take bookings from an audience speaking three languages.","Клуб қызметтерін көрсету және үш тілде сөйлейтін аудиториядан жазылу қабылдау."],
+ c4s:["Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.","A compact site with services and pricing, a booking form that notifies the administrator, and three language versions.","Қызметтер мен бағалар блогы бар ықшам сайт, әкімшіге хабарлама жіберетін жазылу формасы, үш тілдік нұсқа."],
+ c4r:["Запись идёт с сайта, а не только через переписку в соцсетях.","Bookings now come through the site, not only through social media DMs.","Жазылу енді әлеуметтік желідегі хат алмасу арқылы ғана емес, сайттан келеді."],
+ c7k:["Доставка бургеров — промосайт, каталог и корзина","Burger delivery — promotional site, catalogue and cart","Бургер жеткізу — промосайт, каталог және себет"],
+ c7t:["Передать характер бургерной в онлайне и помочь гостю быстро перейти от яркой подачи бренда к выбору блюд.","Bring the burger brand's character online and help guests move quickly from the bold presentation to choosing their meal.","Бургерхананың сипатын онлайнға көшіру және қонаққа брендтің жарқын ұсынысынан тағам таңдауға тез өтуге көмектесу."],
+ c7s:["Контрастная промостраница, акции с промокодами, каталог по категориям с фильтрами, карточки блюд и корзина для оформления заказа.","A high-contrast promotional page, promo-code offers, a filterable category catalogue, product cards, and a cart for placing an order.","Контрастты промобет, промокодты акциялар, санаттар бойынша сүзгілері бар каталог, тағам карточкалары және тапсырыс рәсімдеуге арналған себет."],
+ c7r:["В одном интерфейсе пользователь видит бренд, актуальные предложения и полное меню, а затем собирает заказ без перехода в мессенджеры.","One interface presents the brand, current offers, and the full menu, then lets customers build an order without switching to a messenger.","Бір интерфейсте қолданушы брендті, өзекті ұсыныстарды және толық мәзірді көреді, сосын мессенджерге өтпей тапсырыс жинайды."],
+ note:["Остальные проекты — под NDA или на субподряде, покажу на созвоне.","The rest of the projects are under NDA or subcontracted — happy to walk through them on a call.","Қалған жобалар — NDA аясында немесе субмердігерлік, қоңырау кезінде толық көрсетемін."],
+ p1h:["Разбор задачи","Understanding the task","Міндетті талдау"],
+ p1p:["Смотрю, как бизнес получает клиентов сейчас и что именно мешает. На выходе — структура сайта и список того, что действительно нужно.","I look at how the business gets clients today and what actually gets in the way. The output is a site structure and a list of what is genuinely needed.","Бизнес қазір клиенттерді қалай алатынын және нақты не кедергі болып тұрғанын қараймын. Нәтижесінде — сайт құрылымы және шынымен қажет нәрселердің тізімі."],
+ p2h:["Дизайн и прототип","Design and prototype","Дизайн және прототип"],
+ p2p:["Собираю визуальную спецификацию и макет ключевых экранов до написания кода. Правки на этом этапе бесплатны и быстры.","I produce a visual specification and mock up the key screens before writing code. Changes at this point are free and fast.","Код жазылғанға дейін визуалды спецификация мен негізгі экрандардың макетін жинаймын. Бұл кезеңдегі түзетулер тегін әрі жылдам."],
+ p3h:["Разработка","Development","Әзірлеу"],
+ p3p:["Фронтенд, бэкенд, админка, интеграции с CRM, мессенджерами и нейросетями. Показываю промежуточные версии на тестовом домене.","Frontend, backend, admin panel, integrations with CRM, messengers and AI models. Work in progress is always visible on a staging domain.","Фронтенд, бэкенд, админка, CRM, мессенджерлер және нейрожелілермен интеграция. Аралық нұсқаларды тестілік доменде көрсетемін."],
+ p4h:["Запуск и поддержка","Launch and support","Іске қосу және қолдау"],
+ p4p:["Домен, хостинг, аналитика, индексация. Дальше — доработки по мере роста задач, без переписывания проекта с нуля.","Domain, hosting, analytics, indexing. After that, changes as the business grows — without rewriting the project from scratch.","Домен, хостинг, аналитика, индекстеу. Әрі қарай — міндеттер өскен сайын жетілдіру, жобаны нөлден қайта жазбай."],
+ k1:["Фронтенд","Frontend","Фронтенд"],
+ k2:["Бэкенд и данные","Backend and data","Бэкенд және деректер"],
+ k2p:["Node.js · Python<br>PostgreSQL<br>REST · интеграции CRM","Node.js · Python<br>PostgreSQL<br>REST · CRM integrations","Node.js · Python<br>PostgreSQL<br>REST · CRM интеграциялары"],
+ k3:["Админки и аналитика","Admin and analytics","Админка және аналитика"],
+ k3p:["Панели управления<br>Воронки заявок<br>Дашборды и отчёты","Control panels<br>Lead pipelines<br>Dashboards and reports","Басқару панельдері<br>Өтінім воронкалары<br>Дашбордтар мен есептер"],
+ k4:["Автоматизация и LLM","Automation and LLM","Автоматтандыру және LLM"],
+ k4p:["Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания","Telegram bots (aiogram)<br>Content generation<br>Notifications and reminders","Telegram-боттар (aiogram)<br>Мазмұн генерациясы<br>Таратылым мен еске салулар"],
+ ctah:["Нужен сайт или веб-сервис?","Need a website or web service?","Сайт немесе веб-сервис керек пе?"],
+ ctap:["Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.","Tell me about the task — I'll propose a solution, timeline and price. Available end to end or as a subcontractor.","Міндетті сипаттаңыз — шешімін, мерзімін және құнын ұсынамын. Жобаларды кілтпен және субмердігерлікке аламын."],
+ foot:["© 2026 GuzStudio — веб-разработка под ключ","© 2026 GuzStudio — end-to-end web development","© 2026 GuzStudio — кілтпен веб-әзірлеу"],
+ loc:["Алматы · remote","Almaty · remote","Алматы · қашықтан"],
+}
 
- mq1:["Дизайн","Design"], mq2:["Фронтенд","Frontend"], mq3:["Бэкенд","Backend"],
- mq4:["Админки","Admin panels"], mq5:["Аналитика","Analytics"], mq6:["LLM","LLM"],
- mq1b:["Дизайн","Design"], mq2b:["Фронтенд","Frontend"], mq3b:["Бэкенд","Backend"],
- mq4b:["Админки","Admin panels"], mq5b:["Аналитика","Analytics"], mq6b:["LLM","LLM"],
-
- sec1:["Избранные работы","Selected work"],
- sec1p:["6 из 30+ реализованных проектов — остальные под NDA или на субподряде, покажу на созвоне.",
-        "6 of 30+ delivered projects — the rest are under NDA or subcontracted, happy to show them on a call."],
- sec2:["Как я работаю","How I work"],
- sec2p:["Четыре этапа, на каждом виден результат — вы не ждёте месяц, чтобы впервые что-то увидеть.",
-        "Four stages, each with something to look at — you don't wait a month to see the first result."],
- sec3:["Стек","Stack"],
- sec3p:["Выбираю инструмент под задачу, а не наоборот: визитке не нужна тяжёлая CMS, каталогу с 3D — конструктор сайтов.",
-        "The tool follows the task: a one-pager doesn't need a heavy CMS, and a 3D catalogue doesn't fit a website builder."],
-
- lt:["Задача","Problem"], ls:["Решение","Solution"], lr:["Результат","Outcome"],
- "st-live":["в продакшене","live"], "st-live2":["в продакшене","live"],
- "st-live3":["в продакшене","live"], "st-live4":["в продакшене","live"],
- "st-live5":["в продакшене","live"], "st-live6":["в продакшене","live"],
- "st-wip":["в разработке","in progress"], "st-nda":["под NDA","under NDA"],
- ndab:["Под NDA","Under NDA"], ndas:["покажу на созвоне","shown on a call"],
-
- "g-cap":["Главная и вход в конструктор","Home page and entry to the configurator"],
- "a-cap":["Главная страница клиники","Clinic home page"],
- "b-cap":["Главная и вход в каталог услуг","Home page and service catalogue"],
- "d-cap":["Главная многоязычной версии","Home page, multilingual version"],
- "r-cap":["Главная, болгарская версия","Home page, Bulgarian version"],
- "ap-cap":["Главная страница каталога","Catalogue home page"],
- "bf-cap":["Главная страница промосайта","Promo site home page"],
-
- c5k:["Архитектурно-строительное бюро — каталог проектов и конструктор дома",
-      "Architecture and construction bureau — project catalogue and house configurator"],
- c5t:["Действующий сайт собран на e-commerce-шаблоне: корзина и «1 товар» под каждым проектом дома, меню на 25 пунктов, а обещанный на первом экране расчёт стоимости никуда не вёл.",
-      "The live site runs on an e-commerce template: a shopping cart and «1 item» under every house project, a 25-item menu, and the price estimate promised on the first screen led nowhere."],
- c5s:["Каталог проектов со страницей на каждый дом и конструктор на одиннадцать шагов: 3D-модель на Three.js, планировки, собираемые из тех же модулей, что и объём, выгрузка предварительной сметы в PDF. Любой дом из каталога открывается в конструкторе как редактируемая основа.",
-      "A project catalogue with a page per house and an eleven-step configurator: a Three.js 3D model, floor plans generated from the same modules as the volume, and a preliminary estimate exported to PDF. Any catalogue house opens in the configurator as an editable base."],
- c5r:["Путь «посмотрел проект → собрал свой → получил смету» проходится без звонка менеджеру. Сейчас проект в разработке — покажу вживую на созвоне.",
-      "The path «browse a project → configure your own → get an estimate» works without calling a sales rep. Currently in progress — happy to demo it on a call."],
-
- c6k:["Стоматология в Москве — сайт с записью и админкой","Dental clinic in Moscow — booking site with an admin panel"],
- c6t:["Клинике нужен был поток записей с сайта, отдельные страницы под каждую услугу для поиска и возможность менять врачей, цены и тексты без разработчика.",
-      "The clinic needed bookings coming from the site, a separate indexable page per service, and a way to edit doctors, prices and copy without a developer."],
- c6s:["Одностраничный сайт с ценами и галереей плюс build-шаг, который генерирует индексируемые страницы услуг и sitemap. Заявка сначала сохраняется в хранилище и только потом уходит ботом в Telegram, поэтому сбой мессенджера не уничтожает обращение. Админка правит врачей, услуги и тексты.",
-      "A one-page site with pricing and a gallery, plus a build step that generates indexable service pages and a sitemap. Each request is stored first and only then sent to Telegram by a bot, so a messenger outage never destroys a lead. The admin panel edits doctors, services and copy."],
- c6r:["Запись приходит администратору в мессенджер за секунды, контент клиника ведёт сама, а состояние продакшена проверяется одним health-эндпоинтом.",
-      "Bookings reach the administrator in seconds, the clinic maintains its own content, and production health is verified by a single endpoint."],
-
- c1k:["Обслуживание и продажа катеров — сайт и внутренняя система","Boat service and sales — website plus internal system"],
- c1t:["Заявки терялись в мессенджерах, вести блог было некому, владелец не видел, откуда приходят клиенты.",
-      "Leads got lost in messengers, nobody had time for the blog, and the owner couldn't see where clients came from."],
- c1s:["Сайт с каталогом услуг, админ-панель с воронкой заявок и аналитикой по источникам, генерация черновиков статей для блога через LLM с ручной модерацией.",
-      "Service catalogue site, admin panel with a lead pipeline and source analytics, and LLM-drafted blog articles with manual review."],
- c1r:["Все обращения в одном месте с историей, контент выходит регулярно без отдельного копирайтера.",
-      "Every enquiry lives in one place with its history, and the blog ships regularly without a copywriter."],
-
- c2k:["Международный консалтинг — многоязычный корпоративный сайт","International consulting — multilingual corporate site"],
- c2t:["Компания работает в ЕС, ОАЭ и Болгарии, услуги разбиты по отраслям — прежний сайт не давал клиенту быстро найти своё направление.",
-      "The firm works across the EU, UAE and Bulgaria with services split by industry — the old site made it hard to find the right one."],
- c2s:["Структура «отрасль → услуга» с отдельными посадочными страницами, мультиязычность, единая форма заявки с маршрутизацией по направлению.",
-      "An industry-to-service structure with dedicated landing pages, full localisation, and one enquiry form routed by service line."],
- c2r:["Сайт закрывает несколько рынков одним ресурсом, страницы услуг можно вести как рекламные посадочные.",
-      "One site now covers several markets, and each service page doubles as an ad landing page."],
-
- c3k:["Магазин автозапчастей — интерактивный каталог с 3D","Auto parts store — interactive catalogue with 3D"],
- c3t:["Выделить магазин среди сотен одинаковых каталогов и помочь покупателю понять, что именно он берёт.",
-      "Stand out from hundreds of identical catalogues and help buyers understand exactly what they're getting."],
- c3s:["Собственная айдентика, 3D-рендеры товара в карточке, интерактивная главная, каталог с фильтрами по совместимости.",
-      "Custom identity, 3D product renders on the item page, an interactive home page, and catalogue filters by vehicle fit."],
- c3r:["Магазин выглядит как бренд, а не как выгрузка прайса; карточка товара отвечает на вопросы до обращения в поддержку.",
-      "The store reads as a brand rather than a price-list dump, and product pages answer questions before support has to."],
-
- c4k:["Конный клуб — трёхъязычный сайт с записью","Equestrian club — trilingual site with booking"],
- c4t:["Показать услуги клуба и принимать записи от аудитории, говорящей на трёх языках.",
-      "Present the club's services and take bookings from an audience speaking three languages."],
- c4s:["Компактный сайт с блоком услуг и ценами, форма записи с уведомлением администратору, три языковые версии.",
-      "A compact site with services and pricing, a booking form that notifies the administrator, and three language versions."],
- c4r:["Запись идёт с сайта, а не только через переписку в соцсетях.","Bookings now come through the site, not only through social media DMs."],
-
- c7k:["Доставка бургеров — промосайт, каталог и корзина","Burger delivery — promotional site, catalogue and cart"],
- c7t:["Передать характер бургерной в онлайне и помочь гостю быстро перейти от яркой подачи бренда к выбору блюд.",
-      "Bring the burger brand's character online and help guests move quickly from the bold presentation to choosing their meal."],
- c7s:["Контрастная промостраница, акции с промокодами, каталог по категориям с фильтрами, карточки блюд и корзина для оформления заказа.",
-      "A high-contrast promotional page, promo-code offers, a filterable category catalogue, product cards, and a cart for placing an order."],
- c7r:["В одном интерфейсе пользователь видит бренд, актуальные предложения и полное меню, а затем собирает заказ без перехода в мессенджеры.",
-      "One interface presents the brand, current offers, and the full menu, then lets customers build an order without switching to a messenger."],
-
- note:["Остальные проекты — под NDA или на субподряде, покажу на созвоне.",
-       "The rest of the projects are under NDA or subcontracted — happy to walk through them on a call."],
-
- p1h:["Разбор задачи","Understanding the task"],
- p1p:["Смотрю, как бизнес получает клиентов сейчас и что именно мешает. На выходе — структура сайта и список того, что действительно нужно.",
-      "I look at how the business gets clients today and what actually gets in the way. The output is a site structure and a list of what is genuinely needed."],
- p2h:["Дизайн и прототип","Design and prototype"],
- p2p:["Собираю визуальную спецификацию и макет ключевых экранов до написания кода. Правки на этом этапе бесплатны и быстры.",
-      "I produce a visual specification and mock up the key screens before writing code. Changes at this point are free and fast."],
- p3h:["Разработка","Development"],
- p3p:["Фронтенд, бэкенд, админка, интеграции с CRM, мессенджерами и нейросетями. Показываю промежуточные версии на тестовом домене.",
-      "Frontend, backend, admin panel, integrations with CRM, messengers and AI models. Work in progress is always visible on a staging domain."],
- p4h:["Запуск и поддержка","Launch and support"],
- p4p:["Домен, хостинг, аналитика, индексация. Дальше — доработки по мере роста задач, без переписывания проекта с нуля.",
-      "Domain, hosting, analytics, indexing. After that, changes as the business grows — without rewriting the project from scratch."],
-
- k1:["Фронтенд","Frontend"], k2:["Бэкенд и данные","Backend and data"],
- k2p:["Node.js · Python<br>PostgreSQL<br>REST · интеграции CRM","Node.js · Python<br>PostgreSQL<br>REST · CRM integrations"],
- k3:["Админки и аналитика","Admin and analytics"],
- k3p:["Панели управления<br>Воронки заявок<br>Дашборды и отчёты","Control panels<br>Lead pipelines<br>Dashboards and reports"],
- k4:["Автоматизация и LLM","Automation and LLM"],
- k4p:["Telegram-боты (aiogram)<br>Генерация контента<br>Рассылки и напоминания","Telegram bots (aiogram)<br>Content generation<br>Notifications and reminders"],
-
- ctah:["Нужен сайт или веб-сервис?","Need a website or web service?"],
- ctap:["Опишите задачу — предложу решение, сроки и стоимость. Беру проекты под ключ и на субподряд.",
-       "Tell me about the task — I'll propose a solution, timeline and price. Available end to end or as a subcontractor."],
- foot:["© 2026 GuzStudio — веб-разработка под ключ","© 2026 GuzStudio — end-to-end web development"],
- loc:["Алматы · remote","Almaty · remote"]
+/* T arrays are ordered [ru, en, kk]; the page ships in English. */
+const IDX = {ru:0, en:1, kk:2};
+const META = {
+  ru:{title:'GuzStudio — веб-разработка под ключ', copied:'скопировано'},
+  en:{title:'GuzStudio — end-to-end web development', copied:'copied'},
+  kk:{title:'GuzStudio — кілтпен веб-әзірлеу', copied:'көшірілді'}
 };
-
+const LBTN = {ru:document.getElementById('bru'), en:document.getElementById('ben'), kk:document.getElementById('bkk')};
 function setLang(l){
-  const i = l === 'en' ? 1 : 0;
+  if(!(l in IDX)) l = 'en';
+  const i = IDX[l];
   document.querySelectorAll('[data-i]').forEach(el=>{
     const v = T[el.dataset.i];
-    if(v) el.innerHTML = v[i];
+    if(v && v[i]) el.innerHTML = v[i];
   });
   document.documentElement.lang = l;
-  document.title = i ? 'GuzStudio — end-to-end web development' : 'GuzStudio — веб-разработка под ключ';
-  document.getElementById('mail').dataset.copied = i ? 'copied' : 'скопировано';
-  bru.classList.toggle('on', !i);
-  ben.classList.toggle('on', !!i);
+  document.title = META[l].title;
+  document.getElementById('mail').dataset.copied = META[l].copied;
+  for(const c in LBTN) LBTN[c].classList.toggle('on', c === l);
   try{ localStorage.setItem('lang', l); }catch(e){}
 }
-try{ const saved = localStorage.getItem('lang'); if(saved === 'en') setLang('en'); }catch(e){}
+(function(){
+  let l = null;
+  try{ const p = new URLSearchParams(location.search).get('lang'); if(p && p in IDX) l = p; }catch(e){}
+  if(!l){ try{ const s = localStorage.getItem('lang'); if(s && s in IDX) l = s; }catch(e){} }
+  setLang(l || 'en');
+})();
 
 /* ===== nav scroll state ===== */
 const nav = document.getElementById('nav');
