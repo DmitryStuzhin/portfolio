@@ -21,3 +21,7 @@ User follow-up: remove site notices describing projects as fictional. Keep neutr
 Latest user instruction: restore real-site hero collage. Add two generated visuals, VELA and SOLA, and present all five as a compact continuously moving strip after the main work catalogue, without project links or disclaimer notices.
 
 Visual correction: user rejects repeated oversized object/text-left hero formula. Strip assets regenerated as natural photographs embedded in varied editorial, storefront, travel and vehicle browsing layouts.
+
+Latest presentation preference: no company-name captions beneath generated images and no manual pause control.
+
+User clarified missing projects: add all previous generated variants. Strip contains ten distinct images, the five natural revisions plus all five earlier versions.

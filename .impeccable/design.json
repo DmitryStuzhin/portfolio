@@ -218,9 +218,14 @@
         "assets/concepts/monolith-natural.webp",
         "assets/concepts/form-natural.webp",
         "assets/concepts/vela-natural.webp",
-        "assets/concepts/sola-natural.webp"
+        "assets/concepts/sola-natural.webp",
+        "assets/concepts/aether.webp",
+        "assets/concepts/monolith.webp",
+        "assets/concepts/form.webp",
+        "assets/concepts/vela.webp",
+        "assets/concepts/sola.webp"
       ],
-      "duration": "60s",
+      "duration": "90s",
       "imageWidth": "300px",
       "mobileImageWidth": "240px",
       "placement": "after work catalogue",
@@ -229,9 +234,10 @@
       "pausesOn": [
         "offscreen",
         "hidden tab",
-        "manual pause",
         "prefers-reduced-motion"
-      ]
+      ],
+      "captions": false,
+      "controls": false
     }
   },
   "components": [

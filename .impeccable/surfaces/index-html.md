@@ -18,3 +18,5 @@ Fictional visuals: generated AETHER, MONOLITH and FORM images now fill hero and 
 Current layout: real-site hero restored. Five generated visuals now appear exclusively in a compact continuous 60-second strip after #work and before #process. Prior full-size concept carousel removed.
 
 Strip art direction: natural photography, normal-size headings, varied page layouts; latest assets use -natural.webp suffix.
+
+Current strip: ten images including all earlier versions, no captions or manual controls, continuous 90-second cycle.
