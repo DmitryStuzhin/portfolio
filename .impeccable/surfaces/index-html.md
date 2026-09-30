@@ -12,3 +12,5 @@ User pinned the attached BEEFштекс hero reference. Black poster canvas, ove
 Finish review: ship. Three fixes resolved: opaque foreground screenshots, Kazakh mobile title fit, removal of pre-heading metadata.
 
 Follow-up: all three hero screens fan out together on hover or keyboard focus. Russian desktop/tablet lower title sits below the collage and sticker.
+
+Fictional visuals: generated AETHER, MONOLITH and FORM images now fill hero and a native horizontal concept reel before client work. No project links. Auto advance every seven seconds, visible-only, pause on hover/focus/hidden/reduced motion.

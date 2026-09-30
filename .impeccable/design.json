@@ -211,6 +211,31 @@
       "mid": "translate(-24px,8px) rotate(-17deg)",
       "front": "translate(0,-10px) rotate(-2deg)",
       "reducedMotion": "transitions and animations disabled"
+    },
+    "conceptGallery": {
+      "assets": [
+        "assets/concepts/aether.webp",
+        "assets/concepts/monolith.webp",
+        "assets/concepts/form.webp"
+      ],
+      "fictional": true,
+      "generatedWith": "image_gen",
+      "intervalMs": 7000,
+      "controls": [
+        "previous",
+        "next",
+        "pause",
+        "swipe",
+        "arrow keys"
+      ],
+      "links": false,
+      "pausesOn": [
+        "hover",
+        "focus",
+        "offscreen",
+        "hidden tab",
+        "prefers-reduced-motion"
+      ]
     }
   },
   "components": [

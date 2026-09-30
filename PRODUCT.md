@@ -12,3 +12,6 @@ Existing static HTML/CSS/JavaScript website, no build dependencies. English defa
 GuzStudio. User explicitly requests a complete redesign following the attached BEEFштекс homepage: black canvas, oversized lettering, a strong central object and lime actions. Implementation decisions delegated through the request to not limit the redesign.
 ## Evidence on Hand
 Seven case studies and eight local WebP screenshots in assets/. Existing copy states 30+ projects and two years of commercial development; these are supplied claims, not independently verified. Do not invent testimonials or new performance metrics.
+
+## Fictional visual concepts
+User requested one generated English-language image per invented project and a moving gallery without links. AETHER, MONOLITH and FORM are fictional AI-generated visual concepts, not client projects, not deployed websites, and carry no commercial outcome claims. Hero and separate carousel use these images; the seven existing client cases are preserved.

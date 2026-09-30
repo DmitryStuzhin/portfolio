@@ -64,13 +64,17 @@ html[lang=ru] .hero-sticker{bottom:7%}
 @media(max-width:700px){html[lang=ru] .hero-title{font-size:15.5vw}html[lang=kk] .hero-title{font-size:17vw}html{scroll-padding-top:82px}.wrap{padding-left:20px;padding-right:20px}nav .wrap{height:74px;gap:10px}.logo{font-size:19px}.brand-mark{width:25px;height:25px}.navlinks{display:none}.navright{gap:0}.lang button{min-width:34px}.hero-wrap{padding-top:15px}.hero-meta{font-size:10px}.hero-meta span:last-child{gap:6px}.hero-stage{height:380px;margin-top:24px}.hero-title{font-size:19.7vw;line-height:.9;gap:205px}.hero-art{width:91%;height:255px;top:47%;max-width:430px}.hero-shot{border-width:3px}.hero-orbit{width:65%;left:15%;top:-3%}.hero-sticker{bottom:-1%;right:0;width:70px;height:70px;font-size:8px}.hero-sticker svg{width:20px;height:20px}.hero-bottom{grid-template-columns:1fr;gap:24px;padding:10px 0 30px}.hero-bottom p{font-size:14px;max-width:37ch}.hero-actions{flex-direction:row;gap:10px}.hero-actions .btn{padding:15px 17px;gap:10px;font-size:12px;min-height:52px}.hero-actions .icon{width:18px;height:18px}.hero-foot{font-size:9px;padding:16px 0}.hero-foot>span:nth-child(2){display:none}section{padding:68px 0}.sechead{flex-direction:column;align-items:start;gap:18px;margin-bottom:32px}.sechead p{font-size:13px;max-width:38ch}h2{font-size:44px}.section-count{font-size:12px;margin-top:6px}.cases{grid-template-columns:1fr;gap:40px}.case:first-child,.case:last-child{display:block;grid-column:auto}.case:first-child .body,.case:last-child .body{padding-top:20px}.case:first-child .media img{aspect-ratio:1.6}.case-top h3{font-size:27px}.kind{font-size:13px}.steps,.stack{gap:32px 22px}.step h4{font-size:21px}.step p{font-size:13px}.scard h4{font-size:18px}.scard p{font-size:12px}.cta{padding:60px 0}.cta .wrap{display:block}.cta h2{font-size:58px;max-width:12ch}.cta p{margin-top:24px;font-size:14px}.contacts{margin-top:24px}.contacts .btn{width:100%}.footer-brand{font-size:13.7vw;padding-top:22px}footer{font-size:10px;gap:10px;padding:23px 0}.footer-top{display:none}}
 @media(max-width:360px){.hero-stage{height:340px}.hero-title{gap:185px}.hero-art{height:235px}.hero-meta{font-size:9px}.steps,.stack{grid-template-columns:1fr}.hero-actions{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+.concept-gallery{position:relative}.concept-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:8px;scroll-behavior:smooth}.concept-track::-webkit-scrollbar{display:none}.concept-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}.concept-slide img{width:100%;aspect-ratio:1.6;object-fit:contain;background:var(--void)}.concept-caption{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0}.concept-caption h3{font-size:28px}.concept-caption p{font-size:13px;color:var(--muted)}.concept-toolbar{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;gap:20px}.concept-counter{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}.concept-controls{display:flex;align-items:center;gap:10px}.concept-controls button{height:44px;min-width:44px;border:1px solid var(--line-2);border-radius:50%;background:transparent;color:var(--ink);display:grid;place-items:center;transition:background .2s,color .2s}.concept-controls button:hover{background:var(--amber);color:var(--void)}.concept-controls svg{width:18px;height:18px}.concept-controls .concept-playback{border-radius:30px;padding:0 17px;font-size:12px}.concept-gallery :focus-visible{outline-offset:3px}
+@media(max-width:700px){.concept-caption{align-items:start;flex-direction:column;gap:7px;padding:18px 0}.concept-caption h3{font-size:25px}.concept-caption p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.concept-track{scroll-behavior:auto}}
 </style>
 <style>.skip-link{position:fixed;top:-100px;left:20px;z-index:100;background:var(--amber);color:var(--void);padding:12px 20px}.skip-link:focus{top:12px}</style></head>
 <body>
-<!-- THESIS: Real websites become the central object in a bold portfolio poster.
+<!-- THESIS: Fictional visual concepts become the central object in a bold portfolio poster.
 OWN-WORLD: Black, off-white, acid lime; heavy Onest; open image gallery and pill actions.
 STORY: See the work, inspect seven cases, understand delivery, contact GuzStudio.
-FIRST VIEWPORT: Two oversized words behind overlapping real screenshots; short introduction and two actions below.
+FIRST VIEWPORT: Two oversized words behind overlapping generated concept screenshots; short introduction and two actions below.
 FORM: User-pinned BEEFштекс reference overrides the direction roll, seed 423c31f1.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
 <a href="#work" class="skip-link" data-i="skip">Skip to work</a>
@@ -95,20 +99,29 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <header id="top"><div class="wrap hero-wrap">
 <div class="hero-stage">
 <h1 class="hero-title"><span data-i="heroA">DIGITAL</span><span data-i="heroB">CRAFT</span></h1>
-<div class="hero-art" aria-label="Selected GuzStudio websites">
+<div class="hero-art" aria-label="AI-generated fictional website concepts">
 <div class="hero-orbit" aria-hidden="true"></div>
-<div class="hero-shot back"><img src="assets/boostmarine.webp" width="1440" height="900" alt="Boost Marine website" fetchpriority="high"></div>
-<div class="hero-shot mid"><img src="assets/gardarika.webp" width="1440" height="900" alt="Гардарика — архитектурное бюро"></div>
-<a class="hero-shot front" href="#beef-case" aria-label="BEEFштекс — project details"><img src="assets/beefshteks.webp" width="1440" height="900" alt="BEEFштекс — сайт доставки бургеров" fetchpriority="high"></a>
+<div class="hero-shot back"><img src="assets/concepts/monolith.webp" width="1586" height="992" alt="MONOLITH — fictional architecture website concept" fetchpriority="high"></div>
+<div class="hero-shot mid"><img src="assets/concepts/form.webp" width="1586" height="992" alt="FORM — fictional audio website concept"></div>
+<div class="hero-shot front"><img src="assets/concepts/aether.webp" width="1586" height="992" alt="AETHER — fictional electric supercar website concept" fetchpriority="high"></div>
 <div class="hero-sticker" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span data-i="heroSticker">Design.<br>Code. Launch.</span></div>
 </div></div>
 <div class="hero-bottom"><p data-i="heroIntro">I design and build websites, configurators and web services. From the first idea to the last line of code.</p><div class="hero-actions"><a class="btn p" href="#work"><span data-i="btn1">See the work</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="btn s" href="https://t.me/stuzhin" target="_blank" rel="noopener"><span data-i="heroTalk">Let’s talk</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></div>
-<div class="hero-foot"><span data-i="heroFoot">30+ projects · 2 years of commercial development</span><span data-i="heroLocation">Almaty / Working worldwide</span><a href="#work"><span data-i="scroll">Scroll to explore</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
+<div class="hero-foot"><span data-i="heroFoot">30+ projects · 2 years of commercial development</span><span data-i="conceptDisclosure">AI-generated design concepts</span><a href="#work"><span data-i="scroll">Scroll to explore</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
 </div></header>
 
 
 
-<main><section id="work"><div class="wrap">
+<main><section id="concepts"><div class="wrap">
+<div class="sechead"><h2 data-i="conceptHeading">Concepts in motion</h2><p data-i="conceptDescription">Three fictional brands. AI-generated visual explorations, not client projects.</p></div>
+<div class="concept-gallery" role="region" aria-roledescription="carousel" aria-label="Fictional website concepts">
+<div class="concept-track" tabindex="0" aria-label="Concept slides"><figure class="concept-slide" role="group" aria-label="AETHER — independent design concept"><img src="assets/concepts/aether.webp" width="1586" height="992" loading="lazy" decoding="async" alt="AETHER fictional website homepage, AI-generated design concept"><figcaption class="concept-caption"><h3>AETHER</h3><p>Electric performance / Automotive concept</p></figcaption></figure>
+<figure class="concept-slide" role="group" aria-label="MONOLITH — independent design concept"><img src="assets/concepts/monolith.webp" width="1586" height="992" loading="lazy" decoding="async" alt="MONOLITH fictional website homepage, AI-generated design concept"><figcaption class="concept-caption"><h3>MONOLITH</h3><p>Architecture & spaces / Residential concept</p></figcaption></figure>
+<figure class="concept-slide" role="group" aria-label="FORM — independent design concept"><img src="assets/concepts/form.webp" width="1586" height="992" loading="lazy" decoding="async" alt="FORM fictional website homepage, AI-generated design concept"><figcaption class="concept-caption"><h3>FORM</h3><p>Sound & product design / Audio concept</p></figcaption></figure>
+</div>
+<div class="concept-toolbar"><span class="concept-counter" aria-live="off">01 / 03</span><div class="concept-controls"><button type="button" class="concept-prev" aria-label="Previous concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button type="button" class="concept-playback" data-i="conceptPause" aria-pressed="false">Pause</button><button type="button" class="concept-next" aria-label="Next concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></div>
+</div></div></section>
+<section id="work"><div class="wrap">
 
   <div class="sechead reveal">
     <div><h2><span data-i="sec1">Selected work</span><span class="section-count">(07)</span></h2></div>
@@ -312,6 +325,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <script>
 /* ===== i18n ===== */
 const T = {
+ conceptDisclosure:["ИИ-концепты вымышленных сайтов","AI-generated design concepts","Ойдан шығарылған сайттардың AI тұжырымдамалары"],
+ conceptHeading:["Концепты в движении","Concepts in motion","Қозғалыстағы тұжырымдамалар"],
+ conceptDescription:["Три вымышленных бренда. Визуальные ИИ-концепты, а не клиентские проекты.","Three fictional brands. AI-generated visual explorations, not client projects.","Үш ойдан шығарылған бренд. Клиенттік жобалар емес, AI визуалды тұжырымдамалары."],
+ conceptPause:["Пауза","Pause","Кідірту"],
+ conceptPlay:["Продолжить","Play","Жалғастыру"],
  skip:["Перейти к работам","Skip to work","Жұмыстарға өту"],
  navCta:["Обсудим проект","Let’s talk","Жобаны талқылайық"],
  heroRole:["Независимый разработчик · Full stack","Independent developer · Full stack","Тәуелсіз әзірлеуші · Full stack"],
@@ -478,6 +496,53 @@ const sectionObserver = new IntersectionObserver(entries => {
   }});
 }, {rootMargin:'-15% 0px -55% 0px'});
 document.querySelectorAll('section[id]').forEach(section => sectionObserver.observe(section));
+
+
+/* Fictional concept reel: native horizontal swipe, no project links. */
+const gallery = document.querySelector('.concept-gallery');
+const track = gallery.querySelector('.concept-track');
+const slides = [...track.children];
+const playback = gallery.querySelector('.concept-playback');
+const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+let conceptIndex = 0, visible = false, hovered = false, focused = false;
+let paused = motionPreference.matches, timer = null, scrollFrame = null;
+function updatePlayback(){
+  playback.dataset.i = paused ? 'conceptPlay' : 'conceptPause';
+  playback.textContent = T[playback.dataset.i][IDX[document.documentElement.lang]];
+  playback.setAttribute('aria-pressed', String(paused));
+}
+function scheduleConcept(){
+  clearTimeout(timer);
+  if(paused || motionPreference.matches || !visible || hovered || focused || document.hidden) return;
+  timer = setTimeout(()=>{showConcept(conceptIndex+1);},7000);
+}
+function showConcept(index){
+  conceptIndex = (index + slides.length) % slides.length;
+  track.scrollTo({left:conceptIndex*track.clientWidth,behavior:motionPreference.matches?'instant':'smooth'});
+  scheduleConcept();
+}
+track.addEventListener('scroll',()=>{
+  if(scrollFrame) return;
+  scrollFrame=requestAnimationFrame(()=>{
+    conceptIndex=Math.round(track.scrollLeft/track.clientWidth);
+    gallery.querySelector('.concept-counter').textContent=String(conceptIndex+1).padStart(2,'0')+' / 03';
+    scrollFrame=null;
+  });
+},{passive:true});
+gallery.querySelector('.concept-prev').addEventListener('click',()=>showConcept(conceptIndex-1));
+gallery.querySelector('.concept-next').addEventListener('click',()=>showConcept(conceptIndex+1));
+playback.addEventListener('click',()=>{paused=!paused;updatePlayback();scheduleConcept();});
+track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();showConcept(conceptIndex+(e.key==='ArrowRight'?1:-1));}});
+gallery.addEventListener('mouseenter',()=>{hovered=true;scheduleConcept();});
+gallery.addEventListener('mouseleave',()=>{hovered=false;scheduleConcept();});
+gallery.addEventListener('focusin',()=>{focused=true;scheduleConcept();});
+gallery.addEventListener('focusout',e=>{if(!gallery.contains(e.relatedTarget)){focused=false;scheduleConcept();}});
+document.addEventListener('visibilitychange',scheduleConcept);
+motionPreference.addEventListener('change',()=>{if(motionPreference.matches)paused=true;updatePlayback();scheduleConcept();});
+new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;scheduleConcept();},{threshold:.25}).observe(gallery);
+let resizeFrame;
+addEventListener('resize',()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>track.scrollTo({left:conceptIndex*track.clientWidth,behavior:'instant'}));});
+updatePlayback();
 
 /* ===== copy e-mail ===== */
 const mail = document.getElementById('mail');
