@@ -15,3 +15,5 @@ Seven case studies and eight local WebP screenshots in assets/. Existing copy st
 
 ## Fictional visual concepts
 User requested one generated English-language image per invented project and a moving gallery without links. AETHER, MONOLITH and FORM are fictional AI-generated visual concepts, not client projects, not deployed websites, and carry no commercial outcome claims. Hero and separate carousel use these images; the seven existing client cases are preserved.
+
+User follow-up: remove site notices describing projects as fictional. Keep neutral design-gallery captions and existing carousel controls. The source assets remain generated concepts; no client or outcome claims are added.
