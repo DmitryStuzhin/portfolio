@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T08:15:15.527074+00:00",
+  "title": "Design System: GuzStudio",
+  "extensions": {
+    "colorMeta": {
+      "void": {
+        "role": "neutral",
+        "displayName": "Чёрный холст",
+        "tonalRamp": [
+          "oklch(15% 0.004 100)",
+          "oklch(25% 0.004 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.004 100)",
+          "oklch(55% 0.004 100)",
+          "oklch(65% 0.004 100)",
+          "oklch(80% 0.004 100)",
+          "oklch(95% 0.004 100)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Рамка изображения",
+        "tonalRamp": [
+          "oklch(15% 0.004 100)",
+          "oklch(25% 0.004 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.004 100)",
+          "oklch(55% 0.004 100)",
+          "oklch(65% 0.004 100)",
+          "oklch(80% 0.004 100)",
+          "oklch(95% 0.004 100)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Тёплый белый",
+        "tonalRamp": [
+          "oklch(15% 0.004 100)",
+          "oklch(25% 0.004 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.004 100)",
+          "oklch(55% 0.004 100)",
+          "oklch(65% 0.004 100)",
+          "oklch(80% 0.004 100)",
+          "oklch(95% 0.004 100)"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Основной текст",
+        "tonalRamp": [
+          "oklch(15% 0.004 100)",
+          "oklch(25% 0.004 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.004 100)",
+          "oklch(55% 0.004 100)",
+          "oklch(65% 0.004 100)",
+          "oklch(80% 0.004 100)",
+          "oklch(95% 0.004 100)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Приглушённые подписи",
+        "tonalRamp": [
+          "oklch(15% 0.004 100)",
+          "oklch(25% 0.004 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.004 100)",
+          "oklch(55% 0.004 100)",
+          "oklch(65% 0.004 100)",
+          "oklch(80% 0.004 100)",
+          "oklch(95% 0.004 100)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Разделитель",
+        "tonalRamp": [
+          "oklch(15% 0.004 100)",
+          "oklch(25% 0.004 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.004 100)",
+          "oklch(55% 0.004 100)",
+          "oklch(65% 0.004 100)",
+          "oklch(80% 0.004 100)",
+          "oklch(95% 0.004 100)"
+        ]
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Выразительная линия",
+        "tonalRamp": [
+          "oklch(15% 0.004 100)",
+          "oklch(25% 0.004 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.004 100)",
+          "oklch(55% 0.004 100)",
+          "oklch(65% 0.004 100)",
+          "oklch(80% 0.004 100)",
+          "oklch(95% 0.004 100)"
+        ]
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Кислотный лайм",
+        "tonalRamp": [
+          "oklch(15% 0.17 118)",
+          "oklch(25% 0.17 118)",
+          "oklch(35% 0.17 118)",
+          "oklch(45% 0.17 118)",
+          "oklch(55% 0.17 118)",
+          "oklch(65% 0.17 118)",
+          "oklch(80% 0.17 118)",
+          "oklch(95% 0.17 118)"
+        ]
+      },
+      "amber-hi": {
+        "role": "primary",
+        "displayName": "Лайм при наведении",
+        "tonalRamp": [
+          "oklch(15% 0.17 118)",
+          "oklch(25% 0.17 118)",
+          "oklch(35% 0.17 118)",
+          "oklch(45% 0.17 118)",
+          "oklch(55% 0.17 118)",
+          "oklch(65% 0.17 118)",
+          "oklch(80% 0.17 118)",
+          "oklch(95% 0.17 118)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Крупный набор",
+        "purpose": "Две строки hero."
+      },
+      "headline": {
+        "displayName": "Заголовок секции",
+        "purpose": "Основные разделы."
+      },
+      "title": {
+        "displayName": "Название проекта",
+        "purpose": "Имена кейсов."
+      },
+      "body": {
+        "displayName": "Основной текст",
+        "purpose": "Описание и контакты."
+      },
+      "label": {
+        "displayName": "Подписи",
+        "purpose": "Технологии и статусы."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hero-shot",
+        "value": "0 25px 70px #0009",
+        "purpose": "Наложение реальных скриншотов в hero."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.2,.7,.2,1)",
+        "purpose": "Вход коллажа и переходы изображений."
+      },
+      {
+        "name": "state-duration",
+        "value": ".2s",
+        "purpose": "Кнопки, навигация, раскрытие."
+      },
+      {
+        "name": "image-duration",
+        "value": ".6s",
+        "purpose": "Увеличение изображения при наведении."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Отключить анимации и переходы по системной настройке."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "360px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      },
+      {
+        "name": "hero-animation-min",
+        "value": "901px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "wide",
+        "value": "1600px"
+      }
+    ],
+    "heroInteraction": {
+      "duration": "500ms",
+      "trigger": "hover or focus-within, fine pointer",
+      "back": "translate(22px,-8px) rotate(14deg)",
+      "mid": "translate(-24px,8px) rotate(-17deg)",
+      "front": "translate(0,-10px) rotate(-2deg)",
+      "reducedMotion": "transitions and animations disabled"
+    }
+  },
+  "components": [
+    {
+      "name": "Основная кнопка",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Лаймовое действие на чёрном фоне.",
+      "html": "<a class=\"ds-primary\" href=\"#work\">Смотреть работы <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;padding:17px 25px;min-height:56px;border-radius:50px;font:700 15px Onest,sans-serif;cursor:pointer;transition:background .2s,color .2s,transform .2s;text-decoration:none;background:var(--amber,#d3ef52);color:var(--void,#080808);border:1px solid var(--amber,#d3ef52)}.ds-primary:hover{background:var(--amber-hi,#e1ff60);transform:translateY(-2px)}.ds-primary:active{transform:scale(.98)}.ds-primary:focus-visible{outline:2px solid var(--amber,#d3ef52);outline-offset:6px;}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Вторичная кнопка",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Прозрачное действие с нейтральной границей.",
+      "html": "<a class=\"ds-secondary\" href=\"#contact\">Обсудить проект ↗</a>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;padding:17px 25px;min-height:56px;border-radius:50px;font:700 15px Onest,sans-serif;cursor:pointer;transition:background .2s,color .2s,transform .2s;text-decoration:none;background:transparent;color:var(--ink,#f4f4ed);border:1px solid var(--line-2,#64645a)}.ds-secondary:hover{background:var(--ink,#f4f4ed);color:var(--void,#080808)}.ds-secondary:active{transform:scale(.98)}.ds-secondary:focus-visible{outline:2px solid var(--amber,#d3ef52);outline-offset:6px;}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Навигация",
+      "kind": "nav",
+      "description": "Нейтральные ссылки; выбранная секция выделена лаймом.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Разделы\"><a href=\"#work\" aria-current=\"location\">Работы</a><a href=\"#process\">Процесс</a><a href=\"#contact\">Контакты</a></nav>",
+      "css": ".ds-nav{display:flex;gap:30px;background:var(--void,#080808);padding:12px;font:400 14px Onest,sans-serif}.ds-nav a{display:flex;align-items:center;min-height:44px;color:var(--muted,#aaa9a2);text-decoration:none;transition:color .2s}.ds-nav a:hover,.ds-nav a[aria-current]{color:var(--amber,#d3ef52)}.ds-nav a:focus-visible{outline:2px solid var(--amber,#d3ef52);outline-offset:6px;}@media(prefers-reduced-motion:reduce){.ds-nav{transition:none}}"
+    },
+    {
+      "name": "Раскрытие кейса",
+      "kind": "custom",
+      "description": "Нативный details с разделителем и поворотом плюса.",
+      "html": "<details class=\"ds-details\"><summary>Подробнее о проекте<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M12 4v16M4 12h16\"/></svg></summary><dl><dt>Задача</dt><dd>Содержание подтверждённого кейса.</dd></dl></details>",
+      "css": ".ds-details{border-top:1px solid var(--line,#30302d);font-family:Onest,sans-serif;color:var(--ink,#f4f4ed)}.ds-details summary{list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:48px;font-size:12px;cursor:pointer}.ds-details summary::-webkit-details-marker{display:none}.ds-details summary svg{transition:transform .2s}.ds-details[open] summary svg{transform:rotate(45deg)}.ds-details summary:hover{color:var(--amber,#d3ef52)}.ds-details summary:focus-visible{outline:2px solid var(--amber,#d3ef52);outline-offset:6px;}.ds-details dl{padding:10px 0 20px;margin:0}.ds-details dt{font-size:11px;color:var(--amber,#d3ef52);margin-bottom:5px}.ds-details dd{font-size:14px;color:var(--body,#d6d6d0);line-height:1.7;margin:0}@media(prefers-reduced-motion:reduce){.ds-details{transition:none}}"
+    },
+    {
+      "name": "Статус проекта",
+      "kind": "custom",
+      "description": "Текст и небольшая точка: статус доступен без распознавания цвета.",
+      "html": "<span class=\"ds-status\"><i aria-hidden=\"true\"></i>В продакшене</span>",
+      "css": ".ds-status{display:inline-flex;align-items:center;gap:6px;font:400 11px Onest,sans-serif;color:var(--muted,#aaa9a2)}.ds-status i{width:5px;height:5px;border-radius:50%;background:var(--amber,#d3ef52)}@media(prefers-reduced-motion:reduce){.ds-status{transition:none}}"
+    },
+    {
+      "name": "Технологии",
+      "kind": "chip",
+      "description": "Статичные компактные подписи без плашек.",
+      "html": "<span class=\"ds-tags\"><span>Next.js</span><span>PostgreSQL</span></span>",
+      "css": ".ds-tags{display:flex;flex-wrap:wrap;gap:6px 15px;font:400 11px Onest,sans-serif;color:var(--muted,#aaa9a2)}@media(prefers-reduced-motion:reduce){.ds-tags{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Сайты как центральный объект",
+    "overview": "Реальные работы становятся главным визуальным материалом. Чёрное поле, тяжёлый Onest и кислотный лайм продолжают выбранный пользователем референс BEEFштекс; центральный коллаж собран из локальных скриншотов проектов.\n\nПодача смелая и открытая: крупные заголовки, свободная галерея без оболочек вокруг каждого кейса, светлая полоса процесса и лаймовый контактный блок. Детали раскрываются по желанию посетителя. Это описание реализованной версии, а не дополнительные продуктовые обещания.",
+    "keyCharacteristics": [
+      "Крупная типографика Onest и чёрный фон.",
+      "Реальные скриншоты как главная визуальная опора.",
+      "Лайм для действий и активных состояний.",
+      "Открытая галерея и нативное раскрытие деталей."
+    ],
+    "rules": [
+      {
+        "name": "The Accent Rule",
+        "body": "Использовать лайм для действия и ориентиров; собственные цвета проектов сохранять внутри скриншотов.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** сохранять крупный Onest и реальные изображения проектов.",
+      "**Do** использовать нативные ссылки и раскрывающиеся детали с видимым фокусом.",
+      "**Do** проверять EN, RU и KK на мобильной ширине.",
+      "**Do** учитывать `prefers-reduced-motion` для любого добавленного движения."
+    ],
+    "donts": [
+      "**Don't** возвращать прежние янтарные цвета и отдельные шрифты для заголовков или меток.",
+      "**Don't** заменять реальные скриншоты декоративными заглушками.",
+      "**Don't** закрывать галерею тяжёлыми карточными оболочками.",
+      "**Don't** добавлять неподтверждённые отзывы, метрики или статусы работ."
+    ]
+  }
+}
