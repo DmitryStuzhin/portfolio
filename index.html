@@ -65,16 +65,18 @@ html[lang=ru] .hero-sticker{bottom:7%}
 @media(max-width:360px){.hero-stage{height:340px}.hero-title{gap:185px}.hero-art{height:235px}.hero-meta{font-size:9px}.steps,.stack{grid-template-columns:1fr}.hero-actions{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
-.concept-gallery{position:relative}.concept-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:8px;scroll-behavior:smooth}.concept-track::-webkit-scrollbar{display:none}.concept-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}.concept-slide img{width:100%;aspect-ratio:1.6;object-fit:contain;background:var(--void)}.concept-caption{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0}.concept-caption h3{font-size:28px}.concept-caption p{font-size:13px;color:var(--muted)}.concept-toolbar{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;gap:20px}.concept-counter{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}.concept-controls{display:flex;align-items:center;gap:10px}.concept-controls button{height:44px;min-width:44px;border:1px solid var(--line-2);border-radius:50%;background:transparent;color:var(--ink);display:grid;place-items:center;transition:background .2s,color .2s}.concept-controls button:hover{background:var(--amber);color:var(--void)}.concept-controls svg{width:18px;height:18px}.concept-controls .concept-playback{border-radius:30px;padding:0 17px;font-size:12px}.concept-gallery :focus-visible{outline-offset:3px}
-@media(max-width:700px){.concept-caption{align-items:start;flex-direction:column;gap:7px;padding:18px 0}.concept-caption h3{font-size:25px}.concept-caption p{font-size:12px}}
-@media(prefers-reduced-motion:reduce){.concept-track{scroll-behavior:auto}}
+
+.design-strip{padding:28px 0 16px;overflow:hidden}.design-strip-window{overflow:hidden}.design-strip-track{display:flex;width:max-content;animation:design-drift 60s linear infinite;animation-play-state:paused}.design-strip.is-running .design-strip-track{animation-play-state:running}.design-strip-group{display:flex;gap:18px;padding-right:18px;flex:none}.design-strip-item{width:300px;flex:none}.design-strip-item img{width:100%;aspect-ratio:1.6;object-fit:cover;border-radius:6px}.design-strip-item figcaption{font-size:11px;color:var(--muted);padding-top:9px;letter-spacing:.04em}.design-strip-controls{display:flex;justify-content:flex-end;margin-top:10px}.strip-playback{border:0;background:none;color:var(--muted);font-size:11px;padding:8px 0;min-height:36px}.strip-playback:hover{color:var(--amber)}.strip-playback[hidden]{display:none}@keyframes design-drift{to{transform:translateX(-50%)}}
+@media(max-width:700px){.design-strip{padding:22px 0 12px}.design-strip-item{width:240px}.design-strip-group{gap:14px;padding-right:14px}}
+@media(prefers-reduced-motion:reduce){.design-strip-window{overflow-x:auto}.design-strip-track{animation:none;transform:none}.design-strip-group[aria-hidden]{display:none}}
+
 </style>
 <style>.skip-link{position:fixed;top:-100px;left:20px;z-index:100;background:var(--amber);color:var(--void);padding:12px 20px}.skip-link:focus{top:12px}</style></head>
 <body>
-<!-- THESIS: Fictional visual concepts become the central object in a bold portfolio poster.
+<!-- THESIS: Real websites become the central object in a bold portfolio poster.
 OWN-WORLD: Black, off-white, acid lime; heavy Onest; open image gallery and pill actions.
 STORY: See the work, inspect seven cases, understand delivery, contact GuzStudio.
-FIRST VIEWPORT: Two oversized words behind overlapping generated concept screenshots; short introduction and two actions below.
+FIRST VIEWPORT: Two oversized words behind overlapping real screenshots; short introduction and two actions below.
 FORM: User-pinned BEEFштекс reference overrides the direction roll, seed 423c31f1.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
 <a href="#work" class="skip-link" data-i="skip">Skip to work</a>
@@ -99,11 +101,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <header id="top"><div class="wrap hero-wrap">
 <div class="hero-stage">
 <h1 class="hero-title"><span data-i="heroA">DIGITAL</span><span data-i="heroB">CRAFT</span></h1>
-<div class="hero-art" aria-label="Website design gallery">
+<div class="hero-art" aria-label="Selected GuzStudio websites">
 <div class="hero-orbit" aria-hidden="true"></div>
-<div class="hero-shot back"><img src="assets/concepts/monolith.webp" width="1586" height="992" alt="MONOLITH — architecture website design" fetchpriority="high"></div>
-<div class="hero-shot mid"><img src="assets/concepts/form.webp" width="1586" height="992" alt="FORM — audio website design"></div>
-<div class="hero-shot front"><img src="assets/concepts/aether.webp" width="1586" height="992" alt="AETHER — electric supercar website design" fetchpriority="high"></div>
+<div class="hero-shot back"><img src="assets/boostmarine.webp" width="1440" height="900" alt="Boost Marine website" fetchpriority="high"></div>
+<div class="hero-shot mid"><img src="assets/gardarika.webp" width="1440" height="900" alt="Гардарика — архитектурное бюро"></div>
+<a class="hero-shot front" href="#beef-case" aria-label="BEEFштекс — project details"><img src="assets/beefshteks.webp" width="1440" height="900" alt="BEEFштекс — сайт доставки бургеров" fetchpriority="high"></a>
 <div class="hero-sticker" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span data-i="heroSticker">Design.<br>Code. Launch.</span></div>
 </div></div>
 <div class="hero-bottom"><p data-i="heroIntro">I design and build websites, configurators and web services. From the first idea to the last line of code.</p><div class="hero-actions"><a class="btn p" href="#work"><span data-i="btn1">See the work</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="btn s" href="https://t.me/stuzhin" target="_blank" rel="noopener"><span data-i="heroTalk">Let’s talk</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></div>
@@ -112,15 +114,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 
 
-<main><section id="concepts"><div class="wrap">
-<div class="sechead"><h2 data-i="conceptHeading">Design in motion</h2></div>
-<div class="concept-gallery" role="region" aria-roledescription="carousel" aria-label="Website design gallery">
-<div class="concept-track" tabindex="0" aria-label="Design slides"><figure class="concept-slide" role="group" aria-label="AETHER — independent design concept"><img src="assets/concepts/aether.webp" width="1586" height="992" loading="lazy" decoding="async" alt="AETHER website homepage design"><figcaption class="concept-caption"><h3>AETHER</h3><p>Electric performance / Automotive</p></figcaption></figure>
-<figure class="concept-slide" role="group" aria-label="MONOLITH — independent design concept"><img src="assets/concepts/monolith.webp" width="1586" height="992" loading="lazy" decoding="async" alt="MONOLITH website homepage design"><figcaption class="concept-caption"><h3>MONOLITH</h3><p>Architecture & spaces / Residential</p></figcaption></figure>
-<figure class="concept-slide" role="group" aria-label="FORM — independent design concept"><img src="assets/concepts/form.webp" width="1586" height="992" loading="lazy" decoding="async" alt="FORM website homepage design"><figcaption class="concept-caption"><h3>FORM</h3><p>Sound & product design / Audio</p></figcaption></figure>
-</div>
-<div class="concept-toolbar"><span class="concept-counter" aria-live="off">01 / 03</span><div class="concept-controls"><button type="button" class="concept-prev" aria-label="Previous concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button type="button" class="concept-playback" data-i="conceptPause" aria-pressed="false">Pause</button><button type="button" class="concept-next" aria-label="Next concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></div>
-</div></div></section>
+<main>
 <section id="work"><div class="wrap">
 
   <div class="sechead reveal">
@@ -282,6 +276,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <p class="note reveal" data-i="note">The rest of the projects are under NDA or subcontracted — happy to walk through them on a call.</p>
 </div></section>
 
+<section id="concepts" class="design-strip" aria-label="Website design gallery">
+<div class="design-strip-window"><div class="design-strip-track"><div class="design-strip-group"><figure class="design-strip-item"><img src="assets/concepts/aether-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt="AETHER website design"><figcaption>AETHER</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/monolith-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt="MONOLITH website design"><figcaption>MONOLITH</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/form-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt="FORM website design"><figcaption>FORM</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/vela-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt="VELA website design"><figcaption>VELA</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/sola-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt="SOLA website design"><figcaption>SOLA</figcaption></figure></div><div class="design-strip-group" aria-hidden="true"><figure class="design-strip-item"><img src="assets/concepts/aether-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt=""><figcaption>AETHER</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/monolith-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt=""><figcaption>MONOLITH</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/form-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt=""><figcaption>FORM</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/vela-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt=""><figcaption>VELA</figcaption></figure><figure class="design-strip-item"><img src="assets/concepts/sola-natural.webp" width="1586" height="992" loading="lazy" decoding="async" alt=""><figcaption>SOLA</figcaption></figure></div></div></div>
+<div class="wrap design-strip-controls"><button type="button" class="strip-playback" data-i="conceptPause" aria-pressed="false" hidden>Pause</button></div>
+</section>
+
 <section id="process"><div class="wrap">
   <div class="sechead reveal">
     <h2 data-i="sec2">How I work</h2>
@@ -325,7 +324,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <script>
 /* ===== i18n ===== */
 const T = {
- conceptHeading:["Дизайн в движении","Design in motion","Қозғалыстағы дизайн"],
  conceptPause:["Пауза","Pause","Кідірту"],
  conceptPlay:["Продолжить","Play","Жалғастыру"],
  skip:["Перейти к работам","Skip to work","Жұмыстарға өту"],
@@ -496,51 +494,28 @@ const sectionObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('section[id]').forEach(section => sectionObserver.observe(section));
 
 
-/* Fictional concept reel: native horizontal swipe, no project links. */
-const gallery = document.querySelector('.concept-gallery');
-const track = gallery.querySelector('.concept-track');
-const slides = [...track.children];
-const playback = gallery.querySelector('.concept-playback');
-const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
-let conceptIndex = 0, visible = false, hovered = false, focused = false;
-let paused = motionPreference.matches, timer = null, scrollFrame = null;
-function updatePlayback(){
-  playback.dataset.i = paused ? 'conceptPlay' : 'conceptPause';
-  playback.textContent = T[playback.dataset.i][IDX[document.documentElement.lang]];
-  playback.setAttribute('aria-pressed', String(paused));
+/* Compact continuous design strip, paused when out of view. */
+const designStrip=document.querySelector('.design-strip');
+const playback=designStrip.querySelector('.strip-playback');
+const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+let stripVisible=false,stripPaused=false;
+function syncStrip(){
+  const running=stripVisible&&!stripPaused&&!document.hidden&&!motionPreference.matches;
+  designStrip.classList.toggle('is-running',running);
+  playback.hidden=motionPreference.matches;
+  playback.dataset.i=stripPaused?'conceptPlay':'conceptPause';
+  playback.textContent=T[playback.dataset.i][IDX[document.documentElement.lang]];
+  playback.setAttribute('aria-pressed',String(stripPaused));
 }
-function scheduleConcept(){
-  clearTimeout(timer);
-  if(paused || motionPreference.matches || !visible || hovered || focused || document.hidden) return;
-  timer = setTimeout(()=>{showConcept(conceptIndex+1);},7000);
-}
-function showConcept(index){
-  conceptIndex = (index + slides.length) % slides.length;
-  track.scrollTo({left:conceptIndex*track.clientWidth,behavior:motionPreference.matches?'instant':'smooth'});
-  scheduleConcept();
-}
-track.addEventListener('scroll',()=>{
-  if(scrollFrame) return;
-  scrollFrame=requestAnimationFrame(()=>{
-    conceptIndex=Math.round(track.scrollLeft/track.clientWidth);
-    gallery.querySelector('.concept-counter').textContent=String(conceptIndex+1).padStart(2,'0')+' / 03';
-    scrollFrame=null;
-  });
-},{passive:true});
-gallery.querySelector('.concept-prev').addEventListener('click',()=>showConcept(conceptIndex-1));
-gallery.querySelector('.concept-next').addEventListener('click',()=>showConcept(conceptIndex+1));
-playback.addEventListener('click',()=>{paused=!paused;updatePlayback();scheduleConcept();});
-track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();showConcept(conceptIndex+(e.key==='ArrowRight'?1:-1));}});
-gallery.addEventListener('mouseenter',()=>{hovered=true;scheduleConcept();});
-gallery.addEventListener('mouseleave',()=>{hovered=false;scheduleConcept();});
-gallery.addEventListener('focusin',()=>{focused=true;scheduleConcept();});
-gallery.addEventListener('focusout',e=>{if(!gallery.contains(e.relatedTarget)){focused=false;scheduleConcept();}});
-document.addEventListener('visibilitychange',scheduleConcept);
-motionPreference.addEventListener('change',()=>{if(motionPreference.matches)paused=true;updatePlayback();scheduleConcept();});
-new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;scheduleConcept();},{threshold:.25}).observe(gallery);
-let resizeFrame;
-addEventListener('resize',()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>track.scrollTo({left:conceptIndex*track.clientWidth,behavior:'instant'}));});
-updatePlayback();
+playback.addEventListener('click',()=>{stripPaused=!stripPaused;syncStrip();});
+new IntersectionObserver(entries=>{
+  stripVisible=entries[0].isIntersecting;
+  if(stripVisible)designStrip.querySelectorAll('img').forEach(img=>img.loading='eager');
+  syncStrip();
+},{threshold:0}).observe(designStrip);
+document.addEventListener('visibilitychange',syncStrip);
+motionPreference.addEventListener('change',syncStrip);
+syncStrip();
 
 /* ===== copy e-mail ===== */
 const mail = document.getElementById('mail');

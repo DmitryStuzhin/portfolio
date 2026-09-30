@@ -17,3 +17,7 @@ Seven case studies and eight local WebP screenshots in assets/. Existing copy st
 User requested one generated English-language image per invented project and a moving gallery without links. AETHER, MONOLITH and FORM are fictional AI-generated visual concepts, not client projects, not deployed websites, and carry no commercial outcome claims. Hero and separate carousel use these images; the seven existing client cases are preserved.
 
 User follow-up: remove site notices describing projects as fictional. Keep neutral design-gallery captions and existing carousel controls. The source assets remain generated concepts; no client or outcome claims are added.
+
+Latest user instruction: restore real-site hero collage. Add two generated visuals, VELA and SOLA, and present all five as a compact continuously moving strip after the main work catalogue, without project links or disclaimer notices.
+
+Visual correction: user rejects repeated oversized object/text-left hero formula. Strip assets regenerated as natural photographs embedded in varied editorial, storefront, travel and vehicle browsing layouts.

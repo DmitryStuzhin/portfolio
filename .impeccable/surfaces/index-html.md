@@ -14,3 +14,7 @@ Finish review: ship. Three fixes resolved: opaque foreground screenshots, Kazakh
 Follow-up: all three hero screens fan out together on hover or keyboard focus. Russian desktop/tablet lower title sits below the collage and sticker.
 
 Fictional visuals: generated AETHER, MONOLITH and FORM images now fill hero and a native horizontal concept reel before client work. No project links. Auto advance every seven seconds, visible-only, pause on hover/focus/hidden/reduced motion.
+
+Current layout: real-site hero restored. Five generated visuals now appear exclusively in a compact continuous 60-second strip after #work and before #process. Prior full-size concept carousel removed.
+
+Strip art direction: natural photography, normal-size headings, varied page layouts; latest assets use -natural.webp suffix.

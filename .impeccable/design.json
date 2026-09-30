@@ -212,28 +212,24 @@
       "front": "translate(0,-10px) rotate(-2deg)",
       "reducedMotion": "transitions and animations disabled"
     },
-    "conceptGallery": {
+    "designStrip": {
       "assets": [
-        "assets/concepts/aether.webp",
-        "assets/concepts/monolith.webp",
-        "assets/concepts/form.webp"
+        "assets/concepts/aether-natural.webp",
+        "assets/concepts/monolith-natural.webp",
+        "assets/concepts/form-natural.webp",
+        "assets/concepts/vela-natural.webp",
+        "assets/concepts/sola-natural.webp"
       ],
-      "fictional": true,
-      "generatedWith": "image_gen",
-      "intervalMs": 7000,
-      "controls": [
-        "previous",
-        "next",
-        "pause",
-        "swipe",
-        "arrow keys"
-      ],
+      "duration": "60s",
+      "imageWidth": "300px",
+      "mobileImageWidth": "240px",
+      "placement": "after work catalogue",
       "links": false,
+      "continuous": true,
       "pausesOn": [
-        "hover",
-        "focus",
         "offscreen",
         "hidden tab",
+        "manual pause",
         "prefers-reduced-motion"
       ]
     }
